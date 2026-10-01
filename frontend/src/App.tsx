@@ -1,3 +1,4 @@
+import { AcademicPanel, AcademicSummary, useAcademic } from './Academic'
 import { generateTimetables as runTimetableEngine } from '../../engine-b/src/index.ts'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import collegeByDepartment from './department-colleges.json'
@@ -148,15 +149,56 @@ function describeWalkingTransfers(candidate: Candidate, courses: Course[], route
       const sameBuilding = routes.some((route) => classroomMatchesBuilding(previous.classroom, route.fromBuilding) && classroomMatchesBuilding(next.classroom, route.fromBuilding))
       const route = sameBuilding ? undefined : routes.find((item) => classroomMatchesBuilding(previous.classroom, item.fromBuilding) && classroomMatchesBuilding(next.classroom, item.toBuilding))
       if (!sameBuilding && !route) continue
-      const minimumMinutes = sameBuilding ? 0 : Math.ceil(route!.minutes)
+      const minimumMinutes = Math.ceil((sameBuilding ? 0 : route!.minutes) + 1)
       transfers.push(weekdayNames[day] + '요일 · ' + previous.courseName + ' → ' + next.courseName + ': 이동 최소 ' + minimumMinutes + '분')
     }
   }
   return transfers
 }
 
+function hasFirstPeriodClass(candidate: Candidate, courses: Course[]): boolean {
+  return candidate.sections.some((picked) => {
+    const section = courses.find((course) => course.courseId === picked.courseId)?.sections.find((section) => section.sectionId === picked.sectionId)
+    return section?.days.some((slot) => slot.startTime < '10:00' && slot.endTime > '09:00') ?? false
+  })
+}
+
+function hasLongConsecutiveWalk(candidate: Candidate, courses: Course[], routes: WalkingRoute[]): boolean {
+  if (!routes.length) return false
+  const meetings = candidate.sections.flatMap((picked) => {
+    const course = courses.find((item) => item.courseId === picked.courseId)
+    const section = course?.sections.find((item) => item.sectionId === picked.sectionId)
+    if (!course || !section) return []
+    return section.days.map((slot) => {
+      const classroom = slot.classroom || section.classroom || ''
+      const online = course.isElearning || /온라인|이러닝|원격|비대면/i.test(course.courseName + ' ' + classroom)
+      return { ...slot, classroom, courseName: course.courseName, online }
+    })
+  })
+  for (const day of ['MON', 'TUE', 'WED', 'THU', 'FRI'] as Day[]) {
+    const dayMeetings = meetings.filter((meeting) => meeting.day === day).sort((a, b) => a.startTime.localeCompare(b.startTime))
+    for (let index = 0; index < dayMeetings.length - 1; index += 1) {
+      const previous = dayMeetings[index]
+      const next = dayMeetings[index + 1]
+      if (previous.online || next.online || !previous.classroom || !next.classroom || previous.endTime > next.startTime) continue
+      const previousEnd = Number(previous.endTime.slice(0, 2)) * 60 + Number(previous.endTime.slice(3, 5))
+      const nextStart = Number(next.startTime.slice(0, 2)) * 60 + Number(next.startTime.slice(3, 5))
+      const gap = nextStart - previousEnd
+      if (gap > 30) continue
+      const sameBuilding = routes.some((route) => classroomMatchesBuilding(previous.classroom, route.fromBuilding) && classroomMatchesBuilding(next.classroom, route.fromBuilding))
+      const route = sameBuilding ? undefined : routes.find((item) => classroomMatchesBuilding(previous.classroom, item.fromBuilding) && classroomMatchesBuilding(next.classroom, item.toBuilding))
+      if (!sameBuilding && !route) continue
+      if (gap === 0 && (sameBuilding ? 0 : route!.minutes) + 1 >= 5) return true
+    }
+  }
+  return false
+}
+
 export default function App() {
+  const [academicOpen, setAcademicOpen] = useState(false)
+  const [completedMode, setCompletedMode] = useState(false)
   const [courses, setCourses] = useState<Course[]>([])
+  const academic = useAcademic(courses)
   const [walkingRoutes, setWalkingRoutes] = useState<WalkingRoute[]>([])
   const [selected, setSelected] = useState<string[]>([])
   const [requirements, setRequirements] = useState<Record<string, 'required' | 'optional'>>({})
@@ -178,15 +220,12 @@ export default function App() {
   const [notice, setNotice] = useState('')
   const [response, setResponse] = useState<TimetableResponse | null>(null)
   const [showAll, setShowAll] = useState(false)
+  const [excludeFirstPeriod, setExcludeFirstPeriod] = useState(false)
+  const [excludeLongConsecutiveWalks, setExcludeLongConsecutiveWalks] = useState(false)
   const [candidatePage, setCandidatePage] = useState(0)
   const [professorPreferences, setProfessorPreferences] = useState<Record<string, string[]>>({})
   const candidateResultsRef = useRef<HTMLDivElement | null>(null)
-  const candidateCarouselRef = useRef<HTMLDivElement | null>(null)
-
-  useEffect(() => {
-    const carousel = candidateCarouselRef.current
-    if (carousel) carousel.scrollTo({ left: carousel.clientWidth * candidatePage, behavior: 'smooth' })
-  }, [candidatePage, response])
+  useEffect(() => { setCandidatePage(0) }, [response])
 
   useEffect(() => {
     let cancelled = false
@@ -204,22 +243,25 @@ export default function App() {
       .then((result) => { if (!result.ok) throw new Error('Walking CSV fetch failed'); return result.text() })
       .then((text) => { if (!cancelled) setWalkingRoutes(parseWalkingRoutes(parseCsv(text))) })
       .catch(() => { if (!cancelled) setWalkingRoutes([]) })
-    return () => { cancelled = true }
+
+  return () => { cancelled = true }
   }, [])
 
   const departmentNames = useMemo(() => [...new Set(courses.flatMap((course) => course.departments))].sort((a, b) => a.localeCompare(b, 'ko')), [courses])
   const areaCourses = useMemo(() => courses.filter((course) => inArea(course, area)), [courses, area])
   const collegeNames = useMemo(() => [...new Set(Object.values(collegeByDepartment as Record<string, string>))].sort((a, b) => a.localeCompare(b, 'ko')), [])
   const detailOptions = useMemo(() => (detailCategoriesByArea[area] || []).filter((tag) => areaCourses.some((course) => course.detailCategories.includes(tag))), [areaCourses, area])
-  const visible = useMemo(() => areaCourses.filter((course) =>
+  const matchingCourses = useMemo(() => areaCourses.filter((course) =>
     (!detailFilter || course.detailCategories.includes(detailFilter)) &&
     (area !== '전공' || !selectedCollege || (selectedCollege === '__unmapped' ? course.offeringDepartments.length === 0 || course.offeringDepartments.some((department) => !(collegeByDepartment as Record<string, string>)[department]) : course.offeringDepartments.some((department) => (collegeByDepartment as Record<string, string>)[department] === selectedCollege))) &&
     (grade === '전체 학년' || course.targetGrades.length === 0 || course.targetGrades.includes(grade[0])) &&
     (area !== '전공' || ((!major || course.departments.includes(major)) && (!majorQuery || course.departments.some((department) => department.toLowerCase().includes(majorQuery.trim().toLowerCase()))))) &&
     
-    (course.courseName + ' ' + course.courseId + ' ' + course.category + ' ' + course.departments.join(' ')).toLowerCase().includes(query.trim().toLowerCase())
-  ), [courses, area, selectedCollege, detailFilter, grade, major, majorQuery, query])
-  const chosen = courses.filter((course) => selected.includes(course.courseId))
+    (course.courseName + ' ' + course.courseId + ' ' + course.category + ' ' + course.departments.join(' ') + ' ' + course.sections.map((section) => section.professor).join(' ')).toLowerCase().includes(query.trim().toLowerCase())
+  ), [areaCourses, area, selectedCollege, detailFilter, grade, major, majorQuery, query])
+  const visible = matchingCourses.filter((course) => completedMode || !academic.completedIds.has(course.courseId))
+  const completedMatches = !completedMode && query.trim() ? matchingCourses.filter((course) => academic.completedIds.has(course.courseId)) : []
+  const chosen = courses.filter((course) => selected.includes(course.courseId) && !academic.completedIds.has(course.courseId))
   const totalCredits = chosen.reduce((sum, course) => sum + course.credits, 0)
   const shown = showAll ? visible : visible.slice(0, 40)
 
@@ -227,6 +269,11 @@ export default function App() {
     setSelected((old) => old.includes(courseId) ? old.filter((id) => id !== courseId) : [...old, courseId])
     setResponse(null)
   }
+  useEffect(() => {
+    setSelected((old) => old.filter((code) => !academic.completedIds.has(code)))
+    setResponse(null)
+    setCandidatePage(0)
+  }, [academic.completedIds])
   const buildRequest = (): TimetableRequest => ({
     semester: '2026-2',
     major: area === '전공' ? (major || majorQuery.trim() || '건국대 GLOCAL') : '건국대 GLOCAL',
@@ -259,23 +306,41 @@ export default function App() {
   const changeArea = (next: Area) => { setArea(next); setSelectedCollege(''); setDetailFilter(''); setQuery(''); setShowAll(false) }
   const classTime = (slot: TimeSlot) => weekdayNames[slot.day] + ' ' + slot.startTime + '-' + slot.endTime
 
+
+  const filteredCandidates = (response?.candidates ?? []).filter((candidate) => (!excludeLongConsecutiveWalks || !hasLongConsecutiveWalk(candidate, courses, walkingRoutes)) && (!excludeFirstPeriod || !hasFirstPeriodClass(candidate, courses)))
+  useEffect(() => { setCandidatePage(0) }, [excludeLongConsecutiveWalks, excludeFirstPeriod])
+
   return <div className="app-shell">
-    <header className="topbar"><a className="brand"><b className="brand-mark">틈</b> 틈표</a><span className="semester">2026학년도 2학기 · 건국대 GLOCAL</span></header>
+    <header className="topbar"><a className="brand">시간을 달리는 현우</a><button className="academic-toggle" aria-expanded={academicOpen} aria-controls="academic-panel" onClick={() => setAcademicOpen((open) => !open)}>요람</button></header>
     <main className="page">
+      {academicOpen && <AcademicPanel courses={courses} selected={selected} major={major} entries={academic.entries} update={academic.update} department={academic.department} setDepartment={academic.setDepartment} />}
       <div className="eyebrow">YOUR SEMESTER, YOUR WAY</div>
-      <div className="intro-row"><div><h1>듣고 싶은 과목을 골라보세요</h1><p className="subtitle">전공·학년과 학점 조건을 설정하고, 시간표 엔진에 보낼 과목과 분반 후보를 선택하세요.</p></div><div className="steps">① 조건 입력　›　<strong>② 과목 선택</strong>　›　③ 시간표 조합</div></div>
+      <div className="intro-row"><div><h1>듣고 싶은 과목을 골라보세요</h1><p className="subtitle">전공·학년과 학점 조건을 설정하고, 시간표 엔진에 보낼 과목과 분반 후보를 선택하세요.</p></div></div>
       <div className="workspace">
         <aside className="panel settings">
+          <AcademicSummary entries={academic.classifiedEntries} />
           <div className="panel-title"><h2>선택 조건</h2><span>* 필수 입력</span></div>
           {area === '전공' && <div className="major-picker"><label htmlFor="major-search">학과 검색 및 선택</label><input id="major-search" list="major-options" placeholder="학과명 검색 (예: 컴퓨터공학과)" value={majorQuery} onChange={(event) => { setMajorQuery(event.target.value); setMajor(departmentNames.includes(event.target.value) ? event.target.value : '') }} /><datalist id="major-options">{departmentNames.map((name) => <option value={name} key={name} />)}</datalist><small>선택한 학과의 강좌를 필터링해요.</small></div>}
           <div className="filter-row"><label htmlFor="grade-filter">대상 학년</label><select id="grade-filter" value={grade} onChange={(event) => setGrade(event.target.value)}>{['전체 학년', '1학년', '2학년', '3학년', '4학년'].map((value) => <option key={value}>{value}</option>)}</select></div>
+          <button className="completed-mode-toggle" type="button" aria-pressed={completedMode} aria-controls="course-finder-content" onClick={() => setCompletedMode((active) => !active)}>이수 수업 체크 {completedMode ? '켜짐' : '꺼짐'}</button>
+          <div id="course-finder-content">
           <div className="section-head"><h3>{area} 과목 찾기</h3><small>{loading ? '불러오는 중…' : visible.length.toLocaleString() + '개 과목'}</small></div>
-          <input className="search" placeholder="과목명 또는 학수번호 검색" value={query} onChange={(event) => { setQuery(event.target.value); setShowAll(false) }} />
+          <input className="search" placeholder="과목명 · 학수번호 · 교수명 검색" value={query} onChange={(event) => { setQuery(event.target.value); setShowAll(false) }} />
+          {completedMatches.length > 0 && <div className="completed-search-notice" role="status"><span>이수 완료로 선택 목록에서 제외된 과목: {completedMatches.map((course) => course.courseName).join(', ')}</span><button type="button" onClick={() => setCompletedMode(true)}>이수 기록 확인</button></div>}
           <div className="course-tabs" role="tablist" aria-label="과목 영역">{areaTabs.map((value) => <button role="tab" aria-selected={area === value} key={value} className={area === value ? 'selected' : ''} onClick={() => changeArea(value)}>{value}</button>)}</div>
           {area === '전공' && <div className="detail-filters college-filters" aria-label="전공 대학 및 계열"><button className={!selectedCollege ? 'selected' : ''} onClick={() => setSelectedCollege('')}>전체 대학</button>{collegeNames.map((name) => <button key={name} className={selectedCollege === name ? 'selected' : ''} onClick={() => setSelectedCollege(selectedCollege === name ? '' : name)}>{name}</button>)}<button className={selectedCollege === '__unmapped' ? 'selected' : ''} onClick={() => setSelectedCollege(selectedCollege === '__unmapped' ? '' : '__unmapped')}>대학 분류 확인 중</button></div>}{detailOptions.length > 0 && <div className="detail-filters"><button className={!detailFilter ? 'selected' : ''} onClick={() => setDetailFilter('')}>전체 세부영역</button>{detailOptions.map((tag) => <button key={tag} className={detailFilter === tag ? 'selected' : ''} onClick={() => setDetailFilter(detailFilter === tag ? '' : tag)}>{tag === '글로벌언어' ? '글로벌 언어' : tag}</button>)}</div>}
           {error && <div className="notice" role="alert">{error}<button onClick={() => location.reload()}>다시 불러오기</button></div>}
-          <div className="course-list">{shown.map((course) => <button key={course.courseId} className={'course-row ' + (selected.includes(course.courseId) ? 'chosen' : '')} aria-pressed={selected.includes(course.courseId)} onClick={() => toggle(course.courseId)}><span>{selected.includes(course.courseId) ? '✓' : '＋'}</span><span className="course-copy"><strong>{course.courseName}</strong><small>{course.courseId} · {course.credits}학점 · {course.category} · 분반 {course.sections.length}개</small></span></button>)}{!loading && !error && !visible.length && <p className="subtitle">조건에 맞는 과목이 없어요. 검색 조건을 확인해 주세요.</p>}</div>
+          <div className="course-list">{shown.map((course) => {
+            const recorded = academic.entries.find((entry) => entry.code === course.courseId)
+            const active = completedMode ? !!recorded : selected.includes(course.courseId)
+            return <div className="course-entry" key={course.courseId}><button className={'course-row ' + (active ? 'chosen' : '')} aria-pressed={active} onClick={() => {
+              if (!completedMode) { toggle(course.courseId); return }
+              academic.update(recorded ? null : { code: course.courseId, name: course.courseName, credits: course.credits, category: course.category, area: course.detailCategories.find((tag) => Object.values(detailCategoriesByArea).flat().includes(tag)) || '', grade: 'A' }, course.courseId)
+            }}><span>{active ? '✓' : '＋'}</span><span className="course-copy"><strong>{course.courseName}</strong><small>{course.credits}학점 · {areaTabs.find((item) => item !== '전체' && inArea(course, item)) || course.category}{course.detailCategories.filter((tag) => Object.values(detailCategoriesByArea).flat().includes(tag)).map((tag) => ' · ' + tag).join('')} · 분반 {course.sections.length}개</small></span></button>{completedMode && recorded && <div className="course-grade-entry"><label>성적<select aria-label={course.courseName + ' 성적'} value={recorded.grade} onChange={(event) => academic.update({ ...recorded, grade: event.target.value }, course.courseId)}>{['A+', 'A', 'B+', 'B', 'C+', 'C', 'D+', 'D', 'F', 'P', 'N'].map((grade) => <option key={grade}>{grade}</option>)}</select></label></div>}</div>
+          })}{!loading && !error && !visible.length && <p className="subtitle">조건에 맞는 과목이 없어요. 검색 조건을 확인해 주세요.</p>}</div>
           {visible.length > 40 && <button className="text-button" onClick={() => setShowAll(!showAll)}>{showAll ? '목록 접기' : '과목 더 보기 (' + (visible.length - 40) + '개)'}</button>}
+          {completedMode && <AcademicPanel view="manual" courses={courses} selected={selected} major={major} entries={academic.entries} update={academic.update} department={academic.department} setDepartment={academic.setDepartment} />}
+          </div>
           <div className="selected-box"><strong>선택한 과목 {chosen.length}개 · {totalCredits}학점</strong><div className="chips">{chosen.map((course) => <div className="selection-chip" key={course.courseId}><span>{course.courseName} · {course.credits}학점</span><select aria-label={course.courseName + ' 선택 조건'} value={requirements[course.courseId] || 'required'} onChange={(event) => setRequirements((old) => ({ ...old, [course.courseId]: event.target.value as 'required' | 'optional' }))}><option value="required">반드시 포함</option><option value="optional">선택 가능</option></select><button className="chip" aria-label={course.courseName + ' 선택 해제'} onClick={() => toggle(course.courseId)}>×</button></div>)}</div></div>
           <div className="condition-grid"><label>목표 학점<span><input type="number" min="0" placeholder="최소" value={minCredits} onChange={(event) => setMinCredits(event.target.value)} /> ~ <input type="number" min="0" placeholder="최대" value={maxCredits} onChange={(event) => setMaxCredits(event.target.value)} /></span></label></div>
           <div className="time-condition"><h3>비워둘 시간</h3><div className="time-entry"><select aria-label="요일" value={blockedDay} onChange={(event) => setBlockedDay(event.target.value as Day)}>{(Object.keys(weekdayNames) as Day[]).slice(0, 5).map((day) => <option value={day} key={day}>{weekdayNames[day]}</option>)}</select><input aria-label="시작 시각" type="time" value={blockedStart} onChange={(event) => setBlockedStart(event.target.value)} /><span>~</span><input aria-label="종료 시각" type="time" value={blockedEnd} onChange={(event) => setBlockedEnd(event.target.value)} /><button type="button" onClick={addUnavailableTime}>추가</button></div>{unavailableTimes.map((slot, index) => <div className="time-chip" key={slot.day + slot.startTime + index}>{classTime(slot)}<button aria-label="비워둘 시간 제거" onClick={() => setUnavailableTimes((old) => old.filter((_, current) => current !== index))}>×</button></div>)}</div>
@@ -283,25 +348,22 @@ export default function App() {
         </aside>
         <section className="results">
           <div className="results-top"><div><h2>엔진 요청 및 시간표 후보</h2><p>선택한 과목의 모든 분반 후보를 엔진으로 전달합니다.</p></div><span className="plan-tag">{loading ? 'CSV 불러오는 중' : courses.length.toLocaleString() + '개 과목'}</span></div>
-          {chosen.length === 0 ? <div className="panel empty-selection"><h3>왼쪽 목록에서 과목을 선택하세요</h3><p className="subtitle">학점, 필수 여부, 분반별 요일·시간·강의실을 요청에 담습니다.</p></div> : <div className="selected-course-list">{chosen.map((course) => <article className="plan-card" key={course.courseId}><div className="plan-head"><div><h3>{course.courseName}</h3><span className="plan-tag">{course.courseId} · {course.credits}학점 · {(requirements[course.courseId] || 'required') === 'required' ? '반드시 포함' : '선택 가능'}</span></div><button onClick={() => toggle(course.courseId)}>선택 해제</button></div><p>{course.category} · 분반 후보 {course.sections.length}개</p><div className="section-list">{[...new Set(course.sections.map((section) => section.professor).filter((professor): professor is string => Boolean(professor)))].length > 1 && <fieldset className="professor-filter"><legend>원하는 교수 선택</legend>{[...new Set(course.sections.map((section) => section.professor).filter((professor): professor is string => Boolean(professor)))].map((professor) => <label key={professor}><input type="checkbox" checked={(professorPreferences[course.courseId] || []).includes(professor)} onChange={() => setProfessorPreferences((old) => { const current = old[course.courseId] || []; const next = current.includes(professor) ? current.filter((name) => name !== professor) : [...current, professor]; return { ...old, [course.courseId]: next } })} />{professor}</label>)}</fieldset>}{(professorPreferences[course.courseId]?.length ? course.sections.filter((section) => professorPreferences[course.courseId].includes(section.professor || '')) : course.sections).slice(0, 8).map((section) => <div className="section-option" key={section.sectionId}><strong>분반 {section.sectionId.split(':').slice(-2, -1)[0] || section.sectionId}</strong><span>{section.days.length ? section.days.map(classTime).join(' · ') : section.timeStatus === 'missing' ? '시간 정보 없음' : '시간 형식 확인 필요'}</span><small>{section.classroom || '강의실 정보 없음'} · {section.professor || '담당교수 미정'}</small></div>)}{course.sections.length > 8 && <small>나머지 {course.sections.length - 8}개 분반도 엔진에 전달됩니다.</small>}</div></article>)}</div>}
+          {chosen.length === 0 ? <div className="panel empty-selection"><h3>왼쪽 목록에서 과목을 선택하세요</h3><p className="subtitle">학점, 필수 여부, 분반별 요일·시간·강의실을 요청에 담습니다.</p></div> : <div className="selected-course-list">{chosen.map((course) => <article className="plan-card" key={course.courseId}><div className="plan-head"><div><h3>{course.courseName}</h3><span className="plan-tag">{course.credits}학점 · {(requirements[course.courseId] || 'required') === 'required' ? '반드시 포함' : '선택 가능'}</span></div><button onClick={() => toggle(course.courseId)}>선택 해제</button></div><p>{course.category} · 분반 후보 {course.sections.length}개</p><div className="section-list">{[...new Set(course.sections.map((section) => section.professor).filter((professor): professor is string => Boolean(professor)))].length > 1 && <fieldset className="professor-filter"><legend>원하는 교수 선택</legend>{[...new Set(course.sections.map((section) => section.professor).filter((professor): professor is string => Boolean(professor)))].map((professor) => <label key={professor}><input type="checkbox" checked={(professorPreferences[course.courseId] || []).includes(professor)} onChange={() => setProfessorPreferences((old) => { const current = old[course.courseId] || []; const next = current.includes(professor) ? current.filter((name) => name !== professor) : [...current, professor]; return { ...old, [course.courseId]: next } })} />{professor}</label>)}</fieldset>}{(professorPreferences[course.courseId]?.length ? course.sections.filter((section) => professorPreferences[course.courseId].includes(section.professor || '')) : course.sections).slice(0, 8).map((section) => <div className="section-option" key={section.sectionId}><div className="section-identification"><strong>분반 {section.sectionId.split(':')[2] || '미정'}</strong><small>과목코드 {section.sectionId.split(':')[1] || '미확인'}</small></div><span>{section.days.length ? section.days.map(classTime).join(' · ') : section.timeStatus === 'missing' ? '시간 정보 없음' : '시간 형식 확인 필요'}</span><small>{section.classroom || '강의실 정보 없음'} · {section.professor || '담당교수 미정'}</small></div>)}{course.sections.length > 8 && <small>나머지 {course.sections.length - 8}개 분반도 엔진에 전달됩니다.</small>}</div></article>)}</div>}
           <div className="comparison handoff-card"><h3>시간표 생성에 전달되는 조건</h3><p>학기 · 전공 · 학년 · 과목과 분반 · 학점 범위 · 비워둘 시간을 담아 전달합니다.</p><span className="engine-action-label">선택한 조건으로 시간표 후보를 요청합니다</span><p>선택 {chosen.length}개 · 총 {totalCredits}학점 · 비워둘 시간 {unavailableTimes.length}개</p></div>
           {notice && <div className="notice" role="status">{notice}</div>}
           {response && response.candidates.length > 0 && <div className="candidate-list" ref={candidateResultsRef}>
-            <div className="candidate-title-row">
-              <h2>가능한 시간표 후보 {response.candidates.length}개</h2>
-              {response.candidates.length > 1 && <div className="candidate-controls">
+            <div className="walking-filter"><div className="candidate-filter-buttons"><button type="button" aria-pressed={excludeLongConsecutiveWalks} onClick={() => setExcludeLongConsecutiveWalks((enabled) => !enabled)}>연강 이동 5분 이상 제외 {excludeLongConsecutiveWalks ? '켜짐' : '꺼짐'}</button><button type="button" aria-pressed={excludeFirstPeriod} onClick={() => setExcludeFirstPeriod((enabled) => !enabled)}>1교시 수업 제외 {excludeFirstPeriod ? '켜짐' : '꺼짐'}</button></div><p>연강 사이 도보 이동이 5분 이상인 시간표를 제외해요. 이동 시간이 미확인인 구간은 유지해요. 1교시 제외를 켜면 09:00~10:00과 겹치는 수업이 있는 시간표를 제외해요.</p></div>
+          {filteredCandidates.length === 0 && <p role="status">필터 조건에 맞는 시간표가 없어요. 필터를 끄면 전체 후보를 볼 수 있어요.</p>}
+          <div className="candidate-title-row">
+              <h2>가능한 시간표 후보 {filteredCandidates.length}개</h2>
+              {filteredCandidates.length > 1 && <div className="candidate-controls">
                 <button type="button" aria-label="이전 후보" disabled={candidatePage === 0} onClick={() => setCandidatePage((index) => Math.max(0, index - 1))}>←</button>
-                <span>{candidatePage + 1} / {response.candidates.length}</span>
-                <button type="button" aria-label="다음 후보" disabled={candidatePage >= response.candidates.length - 1} onClick={() => setCandidatePage((index) => Math.min(response.candidates.length - 1, index + 1))}>→</button>
+                <span>{candidatePage + 1} / {filteredCandidates.length}</span>
+                <button type="button" aria-label="다음 후보" disabled={candidatePage >= filteredCandidates.length - 1} onClick={() => setCandidatePage((index) => Math.min(filteredCandidates.length - 1, index + 1))}>→</button>
               </div>}
             </div>
-            <div className="candidate-carousel" ref={candidateCarouselRef} onScroll={(event) => {
-              const carousel = event.currentTarget
-              if (!carousel.clientWidth) return
-              const index = Math.min(response.candidates.length - 1, Math.round(carousel.scrollLeft / carousel.clientWidth))
-              if (index !== candidatePage) setCandidatePage(index)
-            }}>
-              {response.candidates.map((candidate) => <article className="candidate-card" key={candidate.candidateId}>
+            <div className="candidate-carousel">
+              {filteredCandidates.slice(candidatePage, candidatePage + 1).map((candidate) => <article className="candidate-card" key={candidate.candidateId}>
                 <div className="plan-head"><h3>후보 {candidate.candidateId.replace('candidate_', '')}</h3><strong>{candidate.totalCredits}학점 · {candidate.summary.classDays}일 등교</strong></div>
                 <div className="weekly-timetable"><div className="weekly-header"><span className="weekly-corner">시간</span>{(['MON', 'TUE', 'WED', 'THU', 'FRI'] as Day[]).map((day) => <span className="weekly-head-day" key={day}>{weekdayNames[day]}</span>)}</div><div className="weekly-body"><div className="weekly-time-column">{Array.from({ length: 15 }, (_, index) => <span key={index}>{String(index + 8).padStart(2, '0')}:00</span>)}</div>{(['MON', 'TUE', 'WED', 'THU', 'FRI'] as Day[]).map((day) => <div className="weekly-day" key={day}>{candidate.sections.flatMap((picked, courseIndex) => { const course = courses.find((item) => item.courseId === picked.courseId); const section = course?.sections.find((item) => item.sectionId === picked.sectionId); return (section?.days || []).filter((slot) => slot.day === day).map((slot, index) => { const startMinutes = Number(slot.startTime.slice(0, 2)) * 60 + Number(slot.startTime.slice(3, 5)); const endMinutes = Number(slot.endTime.slice(0, 2)) * 60 + Number(slot.endTime.slice(3, 5)); return <article className={`timetable-block color-${courseIndex % 6}`} style={{ top: Math.max(0, (startMinutes - 480) * 40 / 60), height: Math.max(32, (endMinutes - startMinutes) * 40 / 60) }} key={picked.courseId + picked.sectionId + day + index}><strong>{course?.courseName || picked.courseId}</strong><span>{slot.startTime}–{slot.endTime}</span><small>{section?.professor || '담당교수 미정'}</small><small>{slot.classroom || section?.classroom || '강의실 미정'}</small></article> })})}</div>)}</div></div>
                 <div className="unplaced-courses">{candidate.sections.filter((picked) => { const course = courses.find((item) => item.courseId === picked.courseId); return !course?.sections.find((item) => item.sectionId === picked.sectionId)?.days.length }).map((picked) => <span key={picked.courseId + picked.sectionId}>{courses.find((item) => item.courseId === picked.courseId)?.courseName || picked.courseId}: 시간 정보 없음</span>)}</div>
@@ -309,7 +371,7 @@ export default function App() {
               </article>)}
             </div>
           </div>}
-          {response && response.candidates.length === 0 && response.message && <div className="notice" role="status">{response.message}</div>}
+          {response && filteredCandidates.length === 0 && response.message && <div className="notice" role="status">{response.message}</div>}
         </section>
       </div>
       <footer>{loading ? '강좌 CSV를 불러오고 있어요.' : error || 'CSV에서 ' + courses.length.toLocaleString() + '개 과목을 불러왔어요.'}</footer>
