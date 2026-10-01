@@ -10,6 +10,7 @@ export type TimeSlot = {
   classroom?: string | null;
 };
 export type Section = {
+  creditLimitExcluded?: boolean;
   sectionId: string;
   days: TimeSlot[];
   classroom: string | null;
@@ -123,9 +124,9 @@ export function generateTimetables(request: TimetableRequest): TimetableResponse
   const ordered = request.courses.map((course, index) => ({ course, index })).sort((a, b) =>
     (a.course.priority ?? Number.MAX_SAFE_INTEGER) - (b.course.priority ?? Number.MAX_SAFE_INTEGER) || a.index - b.index);
   const selected: Array<{ course: Course; section: Section }> = [];
-  function visit(index: number, credits: number): void {
+  function visit(index: number, credits: number, limitCredits: number): void {
     const { minCredits, maxCredits, unavailableTimes } = request.conditions;
-    if (maxCredits !== null && credits > maxCredits) return;
+    if (maxCredits !== null && limitCredits > maxCredits) return;
     if (index === ordered.length) {
       if (selected.length === 0 || (minCredits !== null && credits < minCredits)) return;
       const allSlots = selected.flatMap(x => slots(x.section));
@@ -154,12 +155,12 @@ export function generateTimetables(request: TimetableRequest): TimetableResponse
       if (nextSlots.some(slot => unavailableTimes.some(block => timesOverlap(slot, block)) ||
           selected.some(x => slots(x.section).some(other => timesOverlap(slot, other))))) continue;
       selected.push({ course, section });
-      visit(index + 1, credits + course.credits);
+      visit(index + 1, credits + course.credits, limitCredits + (section.creditLimitExcluded ? 0 : course.credits));
       selected.pop();
     }
-    if (course.mustInclude === false) visit(index + 1, credits);
+    if (course.mustInclude === false) visit(index + 1, credits, limitCredits);
   }
-  visit(0, 0);
+  visit(0, 0, 0);
   // Lexicographic inclusion ranking: higher-priority courses dominate lower ones.
   candidates.sort((a, b) => {
     for (const { course } of ordered) {
