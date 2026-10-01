@@ -301,6 +301,13 @@ export default function App() {
     })
     setResponse(null)
   }, [maxCredits, courses])
+  useEffect(() => {
+    setResponse(null)
+    setCandidatePage(0)
+  }, [minCredits, maxCredits, unavailableTimes, professorPreferences, requirements, major, grade])
+  useEffect(() => {
+    if (major) academic.setDepartment(major)
+  }, [major])
   const buildRequest = (): TimetableRequest => ({
     semester: '2026-2',
     major: area === '전공' ? (major || majorQuery.trim() || '건국대 GLOCAL') : '건국대 GLOCAL',
@@ -330,6 +337,7 @@ export default function App() {
     window.setTimeout(() => candidateResultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80)
   }
   const addUnavailableTime = () => {
+    if (!blockedStart || !blockedEnd) { setNotice('시작 시각과 종료 시각을 모두 입력해 주세요.'); return }
     if (blockedStart >= blockedEnd) { setNotice('비워둘 시간의 종료 시각은 시작 시각보다 늦어야 해요.'); return }
     setUnavailableTimes((old) => [...old, { day: blockedDay, startTime: blockedStart, endTime: blockedEnd }])
   }
@@ -367,7 +375,7 @@ export default function App() {
               if (!completedMode) { toggle(course.courseId); return }
               academic.update(recorded ? null : { code: course.courseId, name: course.courseName, credits: course.credits, category: course.category, area: course.detailCategories.find((tag) => Object.values(detailCategoriesByArea).flat().includes(tag)) || '', grade: 'A' }, course.courseId)
             }}><span>{active ? '✓' : '＋'}</span><span className="course-copy"><strong>{course.courseName}</strong><small>{course.credits}학점{course.sections.every((section) => section.creditLimitExcluded) ? ' · 한도 제외' : ''} · {areaTabs.find((item) => item !== '전체' && inArea(course, item)) || course.category}{course.detailCategories.filter((tag) => Object.values(detailCategoriesByArea).flat().includes(tag)).map((tag) => ' · ' + tag).join('')} · 분반 {course.sections.length}개</small></span></button>{completedMode && recorded && <div className="course-grade-entry"><label>성적<select aria-label={course.courseName + ' 성적'} value={recorded.grade} onChange={(event) => academic.update({ ...recorded, grade: event.target.value }, course.courseId)}>{['A+', 'A', 'B+', 'B', 'C+', 'C', 'D+', 'D', 'F', 'P', 'N'].map((grade) => <option key={grade}>{grade}</option>)}</select></label></div>}</div>
-          })}{!loading && !error && !visible.length && <p className="subtitle">조건에 맞는 과목이 없어요. 검색 조건을 확인해 주세요.</p>}</div>
+          })}{!loading && !error && !visible.length && <p className="subtitle">{completedMatches.length ? '검색된 과목은 이미 이수 완료한 과목이에요.' : '조건에 맞는 과목이 없어요. 검색 조건을 확인해 주세요.'}</p>}</div>
           {visible.length > 40 && <button className="text-button" onClick={() => setShowAll(!showAll)}>{showAll ? '목록 접기' : '과목 더 보기 (' + (visible.length - 40) + '개)'}</button>}
           {completedMode && <AcademicPanel view="manual" courses={courses} selected={selected} major={major} entries={academic.entries} update={academic.update} department={academic.department} setDepartment={academic.setDepartment} />}
           </div>
