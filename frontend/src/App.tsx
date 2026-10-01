@@ -9,7 +9,7 @@ type Day = 'MON' | 'TUE' | 'WED' | 'THU' | 'FRI' | 'SAT' | 'SUN'
 type TimeSlot = { day: Day; startTime: string; endTime: string; classroom?: string | null }
 type Section = { creditLimitExcluded?: boolean; sectionId: string; days: TimeSlot[]; classroom: string | null; professor?: string | null; timeStatus?: 'parsed' | 'missing' | 'partial' | 'failed' }
 type Course = { courseId: string; courseName: string; credits: number; category: string; requirement: 'required' | 'optional'; sections: Section[]; mustInclude?: boolean; departments: string[]; targetGrades: string[]; detailCategories: string[]; isElearning: boolean; offeringDepartments: string[] }
-type TimetableRequest = { semester: string; major: string; grade: number | null; courses: Array<Omit<Course, 'departments' | 'targetGrades' | 'detailCategories' | 'isElearning' | 'offeringDepartments'>>; conditions: { minCredits: number | null; maxCredits: number | null; unavailableTimes: TimeSlot[] } }
+type TimetableRequest = { semester: string; major: string; grade: number | null; courses: Array<Omit<Course, 'departments' | 'targetGrades' | 'detailCategories' | 'isElearning' | 'offeringDepartments'>>; conditions: { minCredits: number | null; maxCredits: number | null; unavailableTimes: TimeSlot[]; maxGapMinutes?: number | null; maxDailyMinutes?: number | null } }
 type TimetableResponse = { candidates: Array<{ candidateId: string; totalCredits: number; sections: Array<{ courseId: string; sectionId: string }>; summary: { classDays: number; lastClassTime: string | null; travelWarnings: string[] } }>; message?: string }
 type CsvRow = Record<string, string>
 type WalkingRoute = { fromBuilding: string; toBuilding: string; distanceMeters: number; minutes: number }
@@ -214,6 +214,8 @@ export default function App() {
   const [grade, setGrade] = useState('전체 학년')
   const [minCredits, setMinCredits] = useState('')
   const [maxCredits, setMaxCredits] = useState('')
+  const [maxGapMinutes, setMaxGapMinutes] = useState('')
+  const [maxDailyMinutes, setMaxDailyMinutes] = useState('')
   const [blockedDay, setBlockedDay] = useState<Day>('MON')
   const [blockedStart, setBlockedStart] = useState('09:00')
   const [blockedEnd, setBlockedEnd] = useState('10:00')
@@ -273,6 +275,8 @@ export default function App() {
   const toggle = (courseId: string) => {
     const course = courses.find((item) => item.courseId === courseId)
     const group = course && exemptionGroup(course)
+    const addedCredits = course?.sections.every((section) => section.creditLimitExcluded) ? 0 : course?.credits || 0
+    if (!selected.includes(courseId) && maxCredits.trim() && totalCredits - excludedCredits + addedCredits > Number(maxCredits)) { setNotice('최대학점을 초과하여 이 과목을 담을 수 없어요.'); return }
     if (!selected.includes(courseId) && group && chosen.some((item) => exemptionGroup(item) === group)) { setNotice(group + ' 유형은 한 과목만 선택할 수 있어요. 기존 선택을 해제해 주세요.'); return }
     setSelected((old) => old.includes(courseId) ? old.filter((id) => id !== courseId) : [...old, courseId])
     setResponse(null)
@@ -282,6 +286,21 @@ export default function App() {
     setResponse(null)
     setCandidatePage(0)
   }, [academic.completedIds])
+  useEffect(() => {
+    if (!maxCredits.trim() || !Number.isFinite(Number(maxCredits)) || Number(maxCredits) < 0) return
+    setSelected((old) => {
+      let counted = 0
+      return old.filter((code) => {
+        const course = courses.find((item) => item.courseId === code)
+        if (!course) return true
+        const credits = course.sections.every((section) => section.creditLimitExcluded) ? 0 : course.credits
+        if (counted + credits > Number(maxCredits)) return false
+        counted += credits
+        return true
+      })
+    })
+    setResponse(null)
+  }, [maxCredits, courses])
   const buildRequest = (): TimetableRequest => ({
     semester: '2026-2',
     major: area === '전공' ? (major || majorQuery.trim() || '건국대 GLOCAL') : '건국대 GLOCAL',
@@ -290,13 +309,16 @@ export default function App() {
     conditions: {
       minCredits: minCredits.trim() ? Number(minCredits) : null,
       maxCredits: maxCredits.trim() ? Number(maxCredits) : null,
-      unavailableTimes
+      unavailableTimes,
+      maxGapMinutes: maxGapMinutes.trim() ? Number(maxGapMinutes) : null,
+      maxDailyMinutes: maxDailyMinutes.trim() ? Number(maxDailyMinutes) : null
     }
   })
   const sendSelection = async () => {
     if (!chosen.length) { setNotice('먼저 과목을 선택해 주세요.'); return }
     if ((minCredits && !Number.isFinite(Number(minCredits))) || (maxCredits && !Number.isFinite(Number(maxCredits)))) { setNotice('목표 학점을 숫자로 입력해 주세요.'); return }
     if (minCredits && maxCredits && Number(minCredits) > Number(maxCredits)) { setNotice('최소 학점은 최대 학점보다 클 수 없어요.'); return }
+    if ([maxGapMinutes, maxDailyMinutes].some((value) => value.trim() && (!Number.isFinite(Number(value)) || Number(value) < 0))) { setNotice('시간 제한은 0 이상의 분으로 입력해 주세요.'); return }
     const request = buildRequest()
     try { localStorage.setItem('timetable:selected-courses', JSON.stringify(request)) } catch { /* local storage is optional */ }
     window.dispatchEvent(new CustomEvent('timetable:selection-change', { detail: request }))
@@ -352,6 +374,7 @@ export default function App() {
           <div className="selected-box"><strong>선택한 과목 {chosen.length}개 · 총 선택 {totalCredits}학점 · 한도 반영 {totalCredits - excludedCredits}학점 · 한도 제외 {excludedCredits}학점</strong><div className="chips">{chosen.map((course) => <div className="selection-chip" key={course.courseId}><span>{course.courseName} · {course.credits}학점</span><select aria-label={course.courseName + ' 선택 조건'} value={requirements[course.courseId] || 'required'} onChange={(event) => setRequirements((old) => ({ ...old, [course.courseId]: event.target.value as 'required' | 'optional' }))}><option value="required">반드시 포함</option><option value="optional">선택 가능</option></select><button className="chip" aria-label={course.courseName + ' 선택 해제'} onClick={() => toggle(course.courseId)}>×</button></div>)}</div></div>
           <div className="condition-grid"><label>목표 학점<span><input type="number" min="0" placeholder="최소" value={minCredits} onChange={(event) => setMinCredits(event.target.value)} /> ~ <input type="number" min="0" placeholder="최대" value={maxCredits} onChange={(event) => setMaxCredits(event.target.value)} /></span></label></div>
           <div className="time-condition"><h3>비워둘 시간</h3><div className="time-entry"><select aria-label="요일" value={blockedDay} onChange={(event) => setBlockedDay(event.target.value as Day)}>{(Object.keys(weekdayNames) as Day[]).slice(0, 5).map((day) => <option value={day} key={day}>{weekdayNames[day]}</option>)}</select><input aria-label="시작 시각" type="time" value={blockedStart} onChange={(event) => setBlockedStart(event.target.value)} /><span>~</span><input aria-label="종료 시각" type="time" value={blockedEnd} onChange={(event) => setBlockedEnd(event.target.value)} /><button type="button" onClick={addUnavailableTime}>추가</button></div>{unavailableTimes.map((slot, index) => <div className="time-chip" key={slot.day + slot.startTime + index}>{classTime(slot)}<button aria-label="비워둘 시간 제거" onClick={() => setUnavailableTimes((old) => old.filter((_, current) => current !== index))}>×</button></div>)}</div>
+          <div className="schedule-limits"><label>수업 사이 최대 공강 시간 (분)<input type="number" min="0" step="1" placeholder="제한 없음" value={maxGapMinutes} onChange={(event) => { setMaxGapMinutes(event.target.value); setResponse(null) }} /></label><label>하루 최대 실제 강의시간 (분)<input type="number" min="0" step="1" placeholder="제한 없음" value={maxDailyMinutes} onChange={(event) => { setMaxDailyMinutes(event.target.value); setResponse(null) }} /></label><small>공강은 첫 수업 전·마지막 수업 후를 제외해요. 강의시간은 수업 시간만 합산해요. 최대학점을 낮추면 초과 과목은 담은 순서에 따라 제외해요.</small></div>
           <button className="primary-button" disabled={loading || chosen.length === 0} onClick={sendSelection}>시간표 엔진에 전달 →</button>
         </aside>
         <section className="results">

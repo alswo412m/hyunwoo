@@ -120,3 +120,8 @@
 
 .completed-search-notice { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px; padding:10px 12px; border-radius:9px; background:#f5f2fa; color:#534477; font-size:13px; }
 .completed-search-notice button { border:1px solid #cbc4e6; border-radius:7px; background:white; padding:6px 10px; cursor:pointer; white-space:nowrap; }
+
+.settings > .schedule-limits { grid-column:1/-1; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.schedule-limits input { width:100%; box-sizing:border-box; min-height:44px; border:1px solid #dfe6e1; border-radius:9px; padding:10px; margin-top:7px; }
+.schedule-limits small { grid-column:1/-1; color:#76837b; }
+@media(max-width:700px) { .settings > .schedule-limits { grid-template-columns:1fr; } }

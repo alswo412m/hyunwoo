@@ -38,6 +38,8 @@ export type TimetableRequest = {
     minCredits: number | null;
     maxCredits: number | null;
     unavailableTimes: TimeSlot[];
+    maxGapMinutes?: number | null;
+    maxDailyMinutes?: number | null;
   };
 };
 export type TimetableResponse = {
@@ -88,8 +90,8 @@ export function validateTimetableRequest(request: TimetableRequest): void {
       (request.grade !== null && (!Number.isInteger(request.grade) || request.grade < 1)) ||
       !Array.isArray(request.courses) || !request.conditions ||
       !Array.isArray(request.conditions.unavailableTimes)) throw new Error("Invalid request structure");
-  const { minCredits, maxCredits } = request.conditions;
-  for (const value of [minCredits, maxCredits]) {
+  const { minCredits, maxCredits, maxGapMinutes, maxDailyMinutes } = request.conditions;
+  for (const value of [minCredits, maxCredits, maxGapMinutes ?? null, maxDailyMinutes ?? null]) {
     if (value !== null && (!Number.isFinite(value) || value < 0)) throw new Error("Credit limits must be nonnegative or null");
   }
   if (minCredits !== null && maxCredits !== null && minCredits > maxCredits) throw new Error("minCredits exceeds maxCredits");
@@ -130,6 +132,13 @@ export function generateTimetables(request: TimetableRequest): TimetableResponse
     if (index === ordered.length) {
       if (selected.length === 0 || (minCredits !== null && credits < minCredits)) return;
       const allSlots = selected.flatMap(x => slots(x.section));
+      const minutes = (value: string) => Number(value.slice(0, 2)) * 60 + Number(value.slice(3));
+      const weeks = [...new Set([1, ...allSlots.flatMap(slot => slot.weeks ?? [])])];
+      for (const week of weeks) for (const day of DAYS) {
+        const daily = allSlots.filter(slot => slot.day === day && (!slot.weeks || slot.weeks.includes(week))).sort((a, b) => minutes(a.startTime) - minutes(b.startTime));
+        if (request.conditions.maxDailyMinutes != null && daily.reduce((sum, slot) => sum + minutes(slot.endTime) - minutes(slot.startTime), 0) > request.conditions.maxDailyMinutes) return;
+        if (request.conditions.maxGapMinutes != null && daily.some((slot, index) => index > 0 && minutes(slot.startTime) - minutes(daily[index - 1].endTime) > request.conditions.maxGapMinutes!)) return;
+      }
       const last = allSlots.reduce<string | null>((latest, slot) => latest === null || slot.endTime > latest ? slot.endTime : latest, null);
       const walking = analyzeWalking(selected.map(x=>({...x.course,sections:[x.section]})));
       candidates.push({
