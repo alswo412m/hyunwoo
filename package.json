@@ -8,11 +8,9 @@
     "build": "tsc",
     "test": "npm run build && node --experimental-strip-types --test tests/*.test.ts",
     "typecheck": "tsc --noEmit",
-    "demo": "npm run build && npm start",
-    "start": "node dist/server.js"
+    "demo": "npm run build && python3 -m http.server 4173 --bind 127.0.0.1"
   },
   "devDependencies": {
-    "@types/node": "^24.19.0",
     "typescript": "^5.9.3"
   },
   "engines": {

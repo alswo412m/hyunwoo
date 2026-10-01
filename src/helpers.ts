@@ -7,7 +7,7 @@ export type Curriculum = {
   credit_requirements: Record<Exclude<CreditKey, 'other'>, number | null>;
   courses: Array<{ course_code: string; name: string; credits: number; category: string; required: boolean; recommended_grade: number; recommended_semesters: number[] }>;
   unresolved_requirements: string[];
-  metadata?: { single_major_applicability?: string; additional_requirements?: Array<{ description: string; source_pdf_page?: number }> };
+  metadata?: { additional_requirements?: Array<{ description: string; source_pdf_page?: number }> };
 };
 export type CurriculumIndex = { curriculum_year: number; admission_year: number; departments: Array<{ department_id: string; department: string; college: string | null; file: string }> };
 export type RawOffering = {
@@ -28,7 +28,6 @@ export type CurriculumReport = {
   unresolvedRequirements: string[];
   duplicatePlannedCourseIds: string[];
   creditCriteriaSatisfied: boolean | null;
-  singleMajorApplicability: string;
 };
 const dayMap: Record<string, Day> = { 월:'MON', 화:'TUE', 수:'WED', 목:'THU', 금:'FRI', 토:'SAT', 일:'SUN' };
 function categoryFor(code: string, category: string, curriculum: Curriculum): CreditCategory {
@@ -138,10 +137,9 @@ export function checkCurriculum(curriculum: Curriculum, student: Student, planne
   })) as CurriculumReport['credits'];
   const requiredCourses = [...new Map(curriculum.courses.filter(c => c.required).map(c => [c.course_code || `unresolved:${c.name}`,c])).values()].map(c => ({ courseId:c.course_code || `unresolved:${c.name}`,name:c.name,status: !c.course_code ? 'unresolved' as const : completed.has(c.course_code) ? 'completed' as const : plannedCodes.has(c.course_code) ? 'planned' as const : 'missing' as const }));
   const values = Object.values(credits).map(v => v.satisfied);
-  const applicability = curriculum.metadata?.single_major_applicability ?? 'unconfirmed';
-  return { credits, requiredCourses, singleMajorApplicability:applicability, duplicatePlannedCourseIds:[...new Set(duplicates)],
+  return { credits, requiredCourses, duplicatePlannedCourseIds:[...new Set(duplicates)],
     unresolvedRequirements: [...curriculum.unresolved_requirements,...curriculum.courses.filter(c => !c.course_code).map(c => `${c.name}: 학수번호 미확인, 자동 연결 불가`),...(curriculum.metadata?.additional_requirements ?? []).map(r => r.description)],
-    creditCriteriaSatisfied: applicability === 'not_single_major' || applicability === 'unconfirmed' ? null : values.includes(false) ? false : values.includes(null) ? null : true };
+    creditCriteriaSatisfied: values.includes(false) ? false : values.includes(null) ? null : true };
 }
 export function resolveCandidate(request: TimetableRequest, candidate: TimetableResponse['candidates'][number]): Course[] {
   const seen = new Set<string>();
