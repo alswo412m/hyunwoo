@@ -10,11 +10,14 @@ type Course = { courseId: string; courseName: string; credits: number; category:
 type TimetableRequest = { semester: string; major: string; grade: number | null; courses: Array<Omit<Course, 'departments' | 'targetGrades' | 'detailCategories' | 'isElearning' | 'offeringDepartments'>>; conditions: { minCredits: number | null; maxCredits: number | null; unavailableTimes: TimeSlot[] } }
 type TimetableResponse = { candidates: Array<{ candidateId: string; totalCredits: number; sections: Array<{ courseId: string; sectionId: string }>; summary: { classDays: number; lastClassTime: string | null; travelWarnings: string[] } }>; message?: string }
 type CsvRow = Record<string, string>
+type WalkingRoute = { fromBuilding: string; toBuilding: string; distanceMeters: number; minutes: number }
+type Candidate = TimetableResponse['candidates'][number]
 type Area = '전체' | '전공' | '교양(기초)' | '교양(소양)' | '교양(심화)' | '이러닝' | '자선' | '교직' | '기타'
 const areaTabs: Area[] = ['전체', '전공', '교양(기초)', '교양(소양)', '교양(심화)', '이러닝', '자선', '교직', '기타']
 const detailCategoriesByArea: Record<string, string[]> = { '교양(기초)': ['발표와토론', '외국어기초', '글쓰기', '인문기초', '과학기초'], '교양(소양)': ['실무', '실기', '인성'], '교양(심화)': ['글로벌언어', '인간과문화', '인간과사회', '과학과기술', '예술과체육', '신문과미디어', '융복합', 'AI/데이터'] }
 
 const csvUrl = 'https://raw.githubusercontent.com/alswo412m/hyunwoo/main/timetable_data/건국대_GLOCAL_전체강좌_이수구분_2026_2.csv'
+const walkingCsvUrl = 'https://raw.githubusercontent.com/alswo412m/hyunwoo/main/campus_data/건국대_글로컬_도보경로.csv'
 const dayMap: Record<string, Day> = { '월': 'MON', '화': 'TUE', '수': 'WED', '목': 'THU', '금': 'FRI', '토': 'SAT', '일': 'SUN' }
 const weekdayNames: Record<Day, string> = { MON: '월', TUE: '화', WED: '수', THU: '목', FRI: '금', SAT: '토', SUN: '일' }
 
@@ -102,8 +105,59 @@ function generateTimetables(request: TimetableRequest): TimetableResponse {
   return runTimetableEngine(request)
 }
 
+function parseWalkingRoutes(rows: CsvRow[]): WalkingRoute[] {
+  return rows.map((row) => ({
+    fromBuilding: row['출발건물'] || '',
+    toBuilding: row['도착건물'] || '',
+    distanceMeters: Number(row['거리_m']),
+    minutes: Number(row['시간_분'])
+  })).filter((route) => route.fromBuilding && route.toBuilding && Number.isFinite(route.distanceMeters) && Number.isFinite(route.minutes))
+}
+
+function normalizeBuilding(value: string) {
+  return value.replace(/\s+/g, '').replace(/[()（）]/g, '').toLocaleLowerCase()
+}
+
+function classroomMatchesBuilding(classroom: string, building: string) {
+  return normalizeBuilding(classroom).includes(normalizeBuilding(building))
+}
+
+function describeWalkingTransfers(candidate: Candidate, courses: Course[], routes: WalkingRoute[]) {
+  if (!routes.length) return []
+  const meetings = candidate.sections.flatMap((picked) => {
+    const course = courses.find((item) => item.courseId === picked.courseId)
+    const section = course?.sections.find((item) => item.sectionId === picked.sectionId)
+    if (!course || !section) return []
+    return section.days.map((slot) => {
+      const classroom = slot.classroom || section.classroom || ''
+      const online = course.isElearning || /온라인|이러닝|원격|비대면/i.test(course.courseName + ' ' + classroom)
+      return { ...slot, classroom, courseName: course.courseName, online }
+    })
+  })
+  const transfers: string[] = []
+  for (const day of ['MON', 'TUE', 'WED', 'THU', 'FRI'] as Day[]) {
+    const dayMeetings = meetings.filter((meeting) => meeting.day === day).sort((a, b) => a.startTime.localeCompare(b.startTime))
+    for (let index = 0; index < dayMeetings.length - 1; index += 1) {
+      const previous = dayMeetings[index]
+      const next = dayMeetings[index + 1]
+      if (previous.online || next.online || !previous.classroom || !next.classroom || previous.endTime > next.startTime) continue
+      const previousEnd = Number(previous.endTime.slice(0, 2)) * 60 + Number(previous.endTime.slice(3, 5))
+      const nextStart = Number(next.startTime.slice(0, 2)) * 60 + Number(next.startTime.slice(3, 5))
+      const gap = nextStart - previousEnd
+      if (gap > 30) continue
+      const sameBuilding = routes.some((route) => classroomMatchesBuilding(previous.classroom, route.fromBuilding) && classroomMatchesBuilding(next.classroom, route.fromBuilding))
+      const route = sameBuilding ? undefined : routes.find((item) => classroomMatchesBuilding(previous.classroom, item.fromBuilding) && classroomMatchesBuilding(next.classroom, item.toBuilding))
+      if (!sameBuilding && !route) continue
+      const minimumMinutes = sameBuilding ? 0 : Math.ceil(route!.minutes)
+      transfers.push(weekdayNames[day] + '요일 · ' + previous.courseName + ' → ' + next.courseName + ': 이동 최소 ' + minimumMinutes + '분')
+    }
+  }
+  return transfers
+}
+
 export default function App() {
   const [courses, setCourses] = useState<Course[]>([])
+  const [walkingRoutes, setWalkingRoutes] = useState<WalkingRoute[]>([])
   const [selected, setSelected] = useState<string[]>([])
   const [requirements, setRequirements] = useState<Record<string, 'required' | 'optional'>>({})
   const [query, setQuery] = useState('')
@@ -127,6 +181,12 @@ export default function App() {
   const [candidatePage, setCandidatePage] = useState(0)
   const [professorPreferences, setProfessorPreferences] = useState<Record<string, string[]>>({})
   const candidateResultsRef = useRef<HTMLDivElement | null>(null)
+  const candidateCarouselRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const carousel = candidateCarouselRef.current
+    if (carousel) carousel.scrollTo({ left: carousel.clientWidth * candidatePage, behavior: 'smooth' })
+  }, [candidatePage, response])
 
   useEffect(() => {
     let cancelled = false
@@ -135,6 +195,15 @@ export default function App() {
       .then((text) => { if (!cancelled) setCourses(groupCourses(parseCsv(text))) })
       .catch(() => { if (!cancelled) setError('CSV를 불러오지 못했어요. GitHub CSV 경로와 인터넷 연결을 확인해 주세요.') })
       .finally(() => { if (!cancelled) setLoading(false) })
+    return () => { cancelled = true }
+  }, [])
+
+  useEffect(() => {
+    let cancelled = false
+    fetch(walkingCsvUrl)
+      .then((result) => { if (!result.ok) throw new Error('Walking CSV fetch failed'); return result.text() })
+      .then((text) => { if (!cancelled) setWalkingRoutes(parseWalkingRoutes(parseCsv(text))) })
+      .catch(() => { if (!cancelled) setWalkingRoutes([]) })
     return () => { cancelled = true }
   }, [])
 
@@ -217,7 +286,29 @@ export default function App() {
           {chosen.length === 0 ? <div className="panel empty-selection"><h3>왼쪽 목록에서 과목을 선택하세요</h3><p className="subtitle">학점, 필수 여부, 분반별 요일·시간·강의실을 요청에 담습니다.</p></div> : <div className="selected-course-list">{chosen.map((course) => <article className="plan-card" key={course.courseId}><div className="plan-head"><div><h3>{course.courseName}</h3><span className="plan-tag">{course.courseId} · {course.credits}학점 · {(requirements[course.courseId] || 'required') === 'required' ? '반드시 포함' : '선택 가능'}</span></div><button onClick={() => toggle(course.courseId)}>선택 해제</button></div><p>{course.category} · 분반 후보 {course.sections.length}개</p><div className="section-list">{[...new Set(course.sections.map((section) => section.professor).filter((professor): professor is string => Boolean(professor)))].length > 1 && <fieldset className="professor-filter"><legend>원하는 교수 선택</legend>{[...new Set(course.sections.map((section) => section.professor).filter((professor): professor is string => Boolean(professor)))].map((professor) => <label key={professor}><input type="checkbox" checked={(professorPreferences[course.courseId] || []).includes(professor)} onChange={() => setProfessorPreferences((old) => { const current = old[course.courseId] || []; const next = current.includes(professor) ? current.filter((name) => name !== professor) : [...current, professor]; return { ...old, [course.courseId]: next } })} />{professor}</label>)}</fieldset>}{(professorPreferences[course.courseId]?.length ? course.sections.filter((section) => professorPreferences[course.courseId].includes(section.professor || '')) : course.sections).slice(0, 8).map((section) => <div className="section-option" key={section.sectionId}><strong>분반 {section.sectionId.split(':').slice(-2, -1)[0] || section.sectionId}</strong><span>{section.days.length ? section.days.map(classTime).join(' · ') : section.timeStatus === 'missing' ? '시간 정보 없음' : '시간 형식 확인 필요'}</span><small>{section.classroom || '강의실 정보 없음'} · {section.professor || '담당교수 미정'}</small></div>)}{course.sections.length > 8 && <small>나머지 {course.sections.length - 8}개 분반도 엔진에 전달됩니다.</small>}</div></article>)}</div>}
           <div className="comparison handoff-card"><h3>시간표 생성에 전달되는 조건</h3><p>학기 · 전공 · 학년 · 과목과 분반 · 학점 범위 · 비워둘 시간을 담아 전달합니다.</p><span className="engine-action-label">선택한 조건으로 시간표 후보를 요청합니다</span><p>선택 {chosen.length}개 · 총 {totalCredits}학점 · 비워둘 시간 {unavailableTimes.length}개</p></div>
           {notice && <div className="notice" role="status">{notice}</div>}
-          {response && response.candidates.length > 0 && <div className="candidate-list" ref={candidateResultsRef}><div className="candidate-title-row"><h2>가능한 시간표 후보 {response.candidates.length}개</h2>{response.candidates.length > 2 && <div className="candidate-controls"><button type="button" aria-label="이전 후보" disabled={candidatePage === 0} onClick={() => setCandidatePage((page) => Math.max(0, page - 1))}>↑</button><span>{candidatePage + 1} / {Math.ceil(response.candidates.length / 2)}</span><button type="button" aria-label="다음 후보" disabled={(candidatePage + 1) * 2 >= response.candidates.length} onClick={() => setCandidatePage((page) => page + 1)}>↓</button></div>}</div>{response.candidates.slice(candidatePage * 2, candidatePage * 2 + 2).map((candidate) => <article className="candidate-card" key={candidate.candidateId}><div className="plan-head"><h3>후보 {candidate.candidateId.replace('candidate_', '')}</h3><strong>{candidate.totalCredits}학점 · {candidate.summary.classDays}일 등교</strong></div><div className="weekly-timetable"><div className="weekly-header"><span className="weekly-corner">시간</span>{(['MON', 'TUE', 'WED', 'THU', 'FRI'] as Day[]).map((day) => <span className="weekly-head-day" key={day}>{weekdayNames[day]}</span>)}</div><div className="weekly-body"><div className="weekly-time-column">{Array.from({ length: 15 }, (_, index) => <span key={index}>{String(index + 8).padStart(2, '0')}:00</span>)}</div>{(['MON', 'TUE', 'WED', 'THU', 'FRI'] as Day[]).map((day) => <div className="weekly-day" key={day}>{candidate.sections.flatMap((picked, courseIndex) => { const course = courses.find((item) => item.courseId === picked.courseId); const section = course?.sections.find((item) => item.sectionId === picked.sectionId); return (section?.days || []).filter((slot) => slot.day === day).map((slot, index) => { const startMinutes = Number(slot.startTime.slice(0, 2)) * 60 + Number(slot.startTime.slice(3, 5)); const endMinutes = Number(slot.endTime.slice(0, 2)) * 60 + Number(slot.endTime.slice(3, 5)); return <article className={`timetable-block color-${courseIndex % 6}`} style={{ top: Math.max(0, (startMinutes - 480) * 40 / 60), height: Math.max(32, (endMinutes - startMinutes) * 40 / 60) }} key={picked.courseId + picked.sectionId + day + index}><strong>{course?.courseName || picked.courseId}</strong><span>{slot.startTime}–{slot.endTime}</span><small>{section?.professor || '담당교수 미정'}</small><small>{slot.classroom || section?.classroom || '강의실 미정'}</small></article> })})}</div>)}</div></div><div className="unplaced-courses">{candidate.sections.filter((picked) => { const course = courses.find((item) => item.courseId === picked.courseId); return !course?.sections.find((item) => item.sectionId === picked.sectionId)?.days.length }).map((picked) => <span key={picked.courseId + picked.sectionId}>{courses.find((item) => item.courseId === picked.courseId)?.courseName || picked.courseId}: 시간 정보 없음</span>)}</div>{candidate.summary.travelWarnings.map((warning, index) => <small key={index}>{warning}</small>)}</article>)}{response.candidates.length > 4 && <div className="candidate-pagination"><button type="button" disabled={candidatePage === 0} onClick={() => setCandidatePage((page) => Math.max(0, page - 1))}>이전 후보</button><span>{candidatePage + 1} / {Math.ceil(response.candidates.length / 4)} 페이지 · {response.candidates.length}개 후보</span><button type="button" disabled={(candidatePage + 1) * 4 >= response.candidates.length} onClick={() => setCandidatePage((page) => page + 1)}>다음 후보</button></div>}</div>}
+          {response && response.candidates.length > 0 && <div className="candidate-list" ref={candidateResultsRef}>
+            <div className="candidate-title-row">
+              <h2>가능한 시간표 후보 {response.candidates.length}개</h2>
+              {response.candidates.length > 1 && <div className="candidate-controls">
+                <button type="button" aria-label="이전 후보" disabled={candidatePage === 0} onClick={() => setCandidatePage((index) => Math.max(0, index - 1))}>←</button>
+                <span>{candidatePage + 1} / {response.candidates.length}</span>
+                <button type="button" aria-label="다음 후보" disabled={candidatePage >= response.candidates.length - 1} onClick={() => setCandidatePage((index) => Math.min(response.candidates.length - 1, index + 1))}>→</button>
+              </div>}
+            </div>
+            <div className="candidate-carousel" ref={candidateCarouselRef} onScroll={(event) => {
+              const carousel = event.currentTarget
+              if (!carousel.clientWidth) return
+              const index = Math.min(response.candidates.length - 1, Math.round(carousel.scrollLeft / carousel.clientWidth))
+              if (index !== candidatePage) setCandidatePage(index)
+            }}>
+              {response.candidates.map((candidate) => <article className="candidate-card" key={candidate.candidateId}>
+                <div className="plan-head"><h3>후보 {candidate.candidateId.replace('candidate_', '')}</h3><strong>{candidate.totalCredits}학점 · {candidate.summary.classDays}일 등교</strong></div>
+                <div className="weekly-timetable"><div className="weekly-header"><span className="weekly-corner">시간</span>{(['MON', 'TUE', 'WED', 'THU', 'FRI'] as Day[]).map((day) => <span className="weekly-head-day" key={day}>{weekdayNames[day]}</span>)}</div><div className="weekly-body"><div className="weekly-time-column">{Array.from({ length: 15 }, (_, index) => <span key={index}>{String(index + 8).padStart(2, '0')}:00</span>)}</div>{(['MON', 'TUE', 'WED', 'THU', 'FRI'] as Day[]).map((day) => <div className="weekly-day" key={day}>{candidate.sections.flatMap((picked, courseIndex) => { const course = courses.find((item) => item.courseId === picked.courseId); const section = course?.sections.find((item) => item.sectionId === picked.sectionId); return (section?.days || []).filter((slot) => slot.day === day).map((slot, index) => { const startMinutes = Number(slot.startTime.slice(0, 2)) * 60 + Number(slot.startTime.slice(3, 5)); const endMinutes = Number(slot.endTime.slice(0, 2)) * 60 + Number(slot.endTime.slice(3, 5)); return <article className={`timetable-block color-${courseIndex % 6}`} style={{ top: Math.max(0, (startMinutes - 480) * 40 / 60), height: Math.max(32, (endMinutes - startMinutes) * 40 / 60) }} key={picked.courseId + picked.sectionId + day + index}><strong>{course?.courseName || picked.courseId}</strong><span>{slot.startTime}–{slot.endTime}</span><small>{section?.professor || '담당교수 미정'}</small><small>{slot.classroom || section?.classroom || '강의실 미정'}</small></article> })})}</div>)}</div></div>
+                <div className="unplaced-courses">{candidate.sections.filter((picked) => { const course = courses.find((item) => item.courseId === picked.courseId); return !course?.sections.find((item) => item.sectionId === picked.sectionId)?.days.length }).map((picked) => <span key={picked.courseId + picked.sectionId}>{courses.find((item) => item.courseId === picked.courseId)?.courseName || picked.courseId}: 시간 정보 없음</span>)}</div>
+                {describeWalkingTransfers(candidate, courses, walkingRoutes).map((transfer, index) => <small className="travel-notice" key={index}>{transfer}</small>)}
+              </article>)}
+            </div>
+          </div>}
           {response && response.candidates.length === 0 && response.message && <div className="notice" role="status">{response.message}</div>}
         </section>
       </div>

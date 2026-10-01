@@ -99,3 +99,9 @@
 .candidate-controls button:disabled { opacity: .4; cursor: not-allowed; }
 .candidate-controls span { color: #738078; font-size: .9rem; }
 .candidate-pagination { display: none !important; }
+
+/* One timetable per snap point, navigable by buttons or horizontal scrolling. */
+.candidate-list { display: block; }
+.candidate-title-row { margin-bottom: 12px; }
+.candidate-carousel { display: flex; gap: 0; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+.candidate-carousel > .candidate-card { box-sizing: border-box; flex: 0 0 100%; min-width: 0; scroll-snap-align: start; }
