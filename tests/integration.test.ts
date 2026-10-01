@@ -60,3 +60,9 @@ realTest('saving preserves original objects and rejects invalid later section da
  req.courses[0].sections.push({sectionId:'bad',days:[{day:'MON',startTime:'bad',endTime:'10:00'}],classroom:null});
  assert.throws(()=>saveTimetable(storage,'x',{version:1,request:req,selected:null}),/Invalid time/);
 });
+realTest('non-single-major and unconfirmed programs do not imply a graduation credit verdict',()=>{
+ const c=structuredClone(police);for(const key of Object.keys(c.credit_requirements))c.credit_requirements[key]=0;
+ c.metadata.single_major_applicability='not_single_major';
+ const report=checkCurriculum(c,createDemoStudent(c));assert.equal(report.creditCriteriaSatisfied,null);assert.equal(report.singleMajorApplicability,'not_single_major');
+ c.metadata.single_major_applicability='unconfirmed';assert.equal(checkCurriculum(c,createDemoStudent(c)).creditCriteriaSatisfied,null);
+});

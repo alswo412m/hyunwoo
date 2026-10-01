@@ -1,3 +1,6 @@
+import { existsSync } from 'node:fs';
+import { loadDataset } from './campus-data.js';
+import type { CampusCredentials } from './campus-data.js';
 import { createServer } from 'node:http';
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import { readFile } from 'node:fs/promises';
@@ -12,7 +15,7 @@ import type { CurriculumCheckRequest } from './api-client.js';
 export class ApiError extends Error {
   constructor(public status: number, public code: string, message: string) { super(message); }
 }
-export type ServerOptions = { dataDir?: string; rootDir?: string; allowedOrigins?: string[]; generationTimeoutMs?: number };
+export type ServerOptions = { dataDir?: string; rootDir?: string; allowedOrigins?: string[]; generationTimeoutMs?: number; campusConfigFile?: string; campusCredentials?: CampusCredentials };
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const requiredString = (value: unknown, name: string): string => {
   if (typeof value !== 'string' || !value.trim()) throw new ApiError(400,'INVALID_INPUT',`${name} is required`);
@@ -31,18 +34,9 @@ async function body(req: IncomingMessage): Promise<unknown> {
 }
 export async function createApiServer(options: ServerOptions = {}) {
   const rootDir = options.rootDir ?? root; const dataDir = options.dataDir ?? resolve(rootDir,'data');
-  const readJson = async (path: string) => JSON.parse(await readFile(path,'utf8'));
-  const index = await readJson(resolve(dataDir,'curricula/index.json')) as CurriculumIndex;
-  if (!Array.isArray(index.departments)) throw new Error('Invalid curriculum index');
-  const curricula = new Map<string,Curriculum>(); const majors = new Map<string,string>();
-  for (const entry of index.departments) {
-    if (!entry.department_id || curricula.has(entry.department_id) || !/^curriculum_[a-z0-9_]+\.json$/.test(entry.file)) throw new Error('Invalid curriculum index entry');
-    const curriculum = await readJson(resolve(dataDir,'curricula',entry.file)); validateCurriculum(curriculum);
-    if (curriculum.department !== entry.department) throw new Error('Curriculum department does not match index');
-    curricula.set(entry.department_id,curriculum); majors.set(curriculum.department,entry.department_id);
-  }
-  const offerings = await readJson(resolve(dataDir,'courses_2026_2.json')); validateOfferings(offerings);
-  const data: OfferingData = offerings; const semester = `${data.academic_year}-${data.semester}`;
+  const {index,curricula,offerings:data,source,campus} = await loadDataset({dataDir,campusConfigFile:options.campusConfigFile,campusCredentials:options.campusCredentials});
+  const majors = new Map([...curricula].map(([id,c])=>[c.department,id]));
+  const semester = `${data.academic_year}-${data.semester}`;
   const getCurriculum = (id: unknown) => {
     const c = curricula.get(requiredString(id,'departmentId'));
     if (!c) throw new ApiError(404,'DEPARTMENT_NOT_FOUND','Unknown department'); return c;
@@ -78,8 +72,25 @@ export async function createApiServer(options: ServerOptions = {}) {
         res.setHeader('Access-Control-Allow-Methods','GET, POST, OPTIONS');res.setHeader('Access-Control-Allow-Headers','Content-Type');
         if (req.method === 'OPTIONS') { res.writeHead(204);res.end();return; }
         if (req.method === 'GET') {
-          if (url.pathname === '/api/health') { send(res,200,{ status:'ok',semester,departments:index.departments.length });return; }
+          if (url.pathname === '/api/health') { send(res,200,{ status:'ok',semester,departments:index.departments.length,dataSource:source });return; }
           if (url.pathname === '/api/departments') { send(res,200,index);return; }
+          const extraRoutes: Record<string,string> = {
+            '/api/general-education':'/v1/general-education',
+            '/api/general-education/areas':'/v1/general-education/areas',
+            '/api/locations/buildings':'/v1/tables/buildings',
+            '/api/locations/rooms':'/v1/tables/rooms',
+            '/api/locations/entrances':'/v1/tables/entrances',
+            '/api/locations/travel-routes':'/v1/tables/travel_routes'
+          };
+          if (extraRoutes[url.pathname]) {
+            if (!campus) throw new ApiError(503,'C_API_NOT_CONFIGURED','C API connection is required for this resource');
+            const allowed = url.pathname.startsWith('/api/general-education') ? ['category','area'] : ['limit','offset','building_id'];
+            const query: Record<string,string> = {};
+            for(const [key,value] of url.searchParams) { if(!allowed.includes(key))throw new ApiError(400,'INVALID_INPUT',`Unsupported query: ${key}`);query[key]=value; }
+            try { send(res,200,await campus.get(extraRoutes[url.pathname],query)); }
+            catch { throw new ApiError(502,'C_API_UNAVAILABLE','C API 자료를 가져오지 못했습니다. C 서버 연결과 인증을 확인하세요.'); }
+            return;
+          }
           const known = ['/api/curriculum','/api/demo-student','/api/catalog'];
           if (!known.includes(url.pathname)) throw new ApiError(404,'NOT_FOUND','Unknown API endpoint');
           const c = getCurriculum(url.searchParams.get('departmentId'));
@@ -145,8 +156,16 @@ export async function createApiServer(options: ServerOptions = {}) {
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   try {
     const port = Number(process.env.PORT ?? 4173); const host = process.env.HOST ?? '127.0.0.1';
-    const server = await createApiServer({ dataDir:process.env.DATA_DIR,allowedOrigins:process.env.ALLOWED_ORIGINS?.split(',').map(s=>s.trim()) });
+    const configPath = resolve(root,'config.json');
+    const config = existsSync(configPath) ? JSON.parse(await readFile(configPath,'utf8')) : {};
+    const campusConfigFile = process.env.CAMPUS_API_CONFIG ?? config.campus_api_config;
+    const envCredentials = process.env.CAMPUS_API_URL && process.env.CAMPUS_API_KEY ? {base_url:process.env.CAMPUS_API_URL,api_key:process.env.CAMPUS_API_KEY} : undefined;
+    if ((process.env.CAMPUS_API_URL || process.env.CAMPUS_API_KEY) && !envCredentials) throw new Error('Both CAMPUS_API_URL and CAMPUS_API_KEY are required');
+    if (config.data_source === 'campus-api' && !campusConfigFile && !envCredentials) throw new Error('C API configuration is required for campus-api mode');
+    const useRemote = config.data_source !== 'local-json' || Boolean(process.env.CAMPUS_API_CONFIG || envCredentials);
+    const server = await createApiServer({ dataDir:process.env.DATA_DIR,allowedOrigins:process.env.ALLOWED_ORIGINS?.split(',').map(s=>s.trim()),
+      campusConfigFile:useRemote?campusConfigFile:undefined,campusCredentials:envCredentials });
     server.listen(port,host,() => console.log(`API + demo: http://${host}:${port}/demo/`));
     server.on('error',error => {console.error(error.message);process.exitCode=1;});
-  } catch(error) { console.error(`API startup failed: ${error instanceof Error ? error.message : String(error)}. Place C JSON files in data/ or set DATA_DIR.`);process.exitCode=1; }
+  } catch(error) { console.error(`API startup failed: ${error instanceof Error ? error.message : String(error)}. Check private config.json/CAMPUS_API_CONFIG for C API mode, or data/ for local JSON mode.`);process.exitCode=1; }
 }

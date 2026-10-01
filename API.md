@@ -108,3 +108,45 @@ type CurriculumCheckRequest = {
 시간표와 가상 이력은 A의 localStorage에 저장합니다. 서버에 사용자 저장 API나 로그인 기능은 없습니다. 학과·학기별 키로 저장하고, 복원 후 요람 체크 API를 다시 호출합니다. 결과 표시는 요일 × 08:00–22:00 격자이며 이는 A의 렌더링 책임입니다. 데모의 demo/app.js가 실제 API 연결 예시입니다. 데모는 기본 같은 origin을 사용하고, 별도 서버를 사용할 때 스크립트 실행 전에 `window.TIMETABLE_API_BASE_URL`을 설정할 수 있습니다.
 
 계산은 Worker에서 실행하여 다른 API를 막지 않습니다. 최대 2개 요청을 동시 계산하며 30초 초과는 503으로 반환합니다. 성공 시 조합을 임의로 자르지 않고 전체 반환합니다. A는 계산 중 표시, 실패 안내, 페이지 표시를 구현하세요. 배포 서버와 공개 URL은 아직 만들지 않았습니다.
+
+## C 담당 데이터 API 연결 (새 전달자료 기준)
+
+현재 B 서버는 로컬 JSON 또는 C의 인증된 `/v1` API를 데이터 원본으로 사용합니다. A가 호출하는 `/api` 형식은 유지됩니다. 연결은 **A 브라우저 → B 서버 → C 서버**이고 B 키는 B 서버에서만 사용합니다.
+
+1. `config.example.json`을 저장소 루트의 `config.json`으로 복사합니다.
+2. `campus_api_config`를 C가 준 비공개 config.json의 절대 경로로 지정합니다. 그 파일은 `{base_url, api_key}` 형식입니다.
+3. `npm run build && npm start`로 실행합니다. 실제 C API로 49개 요람과 전체 페이지의 강좌를 로딩한 뒤 서버가 시작합니다.
+
+```json
+{
+  "data_source": "campus-api",
+  "campus_api_config": "/absolute/path/to/B-delivery/config.json"
+}
+```
+
+또는 `CAMPUS_API_CONFIG` 환경 변수로 비공개 파일 경로를 지정하거나, `CAMPUS_API_URL`과 `CAMPUS_API_KEY`를 함께 설정합니다. 키를 명령행 인자·프런트 코드·GitHub에 기록하지 마세요. 루트 config.json, api_key.txt, .env 파일은 Git 제외입니다. 설정 예시에는 키가 없습니다.
+
+로컬 JSON 모드로 실행하려면 루트 config.json에서 `data_source`를 `local-json`으로 지정합니다. 환경 변수 CAMPUS_API_CONFIG/URL/KEY가 있으면 환경 변수의 C API 설정이 우선합니다. C API를 지정했는데 연결되지 않을 때 자동으로 로컬 자료로 전환하지 않으며, 오류를 알립니다.
+
+C 연결 방식:
+
+- 인증: `X-API-Key`, 요청은 서버에서만 실행. 20초 연결 제한, 무한 재시도 없음.
+- `/v1/departments`의 `{items}`를 A의 학과 index 형식으로 변환. 실제 응답의 `name`을 `department`에 연결합니다. college 이름이 없으면 null입니다.
+- `/v1/curricula/{department_id}?curriculum_year=2025`의 교육과정 객체 사용. metadata와 미확인 조건 보존.
+- `/v1/courses?academic_year=2026&semester=2&include_cancelled=true&limit=2000&offset=...`의 모든 페이지를 로딩합니다. B 어댑터가 폐강을 제외합니다. 빈 중간 페이지나 전체 건수 변화는 오류로 처리합니다.
+- 시작할 때 읽은 데이터를 메모리에 유지합니다. C에서 자료를 변경하면 B 서버를 재시작해 다시 가져옵니다. `/api/health`의 `dataSource`는 campus-api/local-json입니다.
+- time_status가 불완전한 강좌는 사용자 지정 데모 정책에 따라 **온라인 가정**을 유지합니다. C 원문을 온라인으로 변경하지 않습니다.
+- metadata.single_major_applicability가 not_single_major/unconfirmed면 학점 기준 충족 판정을 보류하고, 화면에 적용 여부를 표시합니다.
+
+추가 읽기 API(연결된 C API 응답 구조 그대로 반환):
+
+| B API | C API | 허용 query |
+|---|---|---|
+| GET /api/general-education | /v1/general-education | category, area |
+| GET /api/general-education/areas | /v1/general-education/areas | category, area |
+| GET /api/locations/buildings | /v1/tables/buildings | limit, offset, building_id |
+| GET /api/locations/rooms | /v1/tables/rooms | limit, offset, building_id |
+| GET /api/locations/entrances | /v1/tables/entrances | limit, offset, building_id |
+| GET /api/locations/travel-routes | /v1/tables/travel_routes | limit, offset, building_id |
+
+로컬 자료 모드에서 추가 읽기 API는 503 C_API_NOT_CONFIGURED입니다. 연결 실패는 502 C_API_UNAVAILABLE로 알리며 키 값은 반환하지 않습니다. 빈 이동 자료를 이동시간 0분으로 바꾸지 않으며 이동 계산은 수행하지 않습니다. 교양 영역 API는 조회 기능이며 세부 졸업 조건을 자동 판정하는 기능은 아닙니다.

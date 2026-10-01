@@ -66,3 +66,7 @@ Node.js 22.6 이상(권장 24)에서 `npm install`, `npm test`, `npm run typeche
 ## HTTP API
 
 `npm run build && npm start`로 API와 demo를 함께 실행합니다. `src/server.ts`는 학과/강좌/가상 학생/시간표 생성/요람 체크 API를 제공하고, `src/api-client.ts`는 A 화면의 타입 지정 fetch 호출을 제공합니다. demo는 이제 이 API를 사용합니다. 실행 환경, CORS, 오류와 A 연결 예시는 [API.md](API.md)에 있습니다. `npm test`는 HTTP 통합 검증을 포함합니다. 원본 C JSON이 없는 환경에서는 실제 자료 통합 테스트를 건너뜁니다.
+
+## C 데이터 API 사용
+
+새 C 전달자료의 비공개 config.json을 B 서버에서 읽을 수 있습니다. 저장소의 config.example.json을 개인 config.json으로 복사해 campus_api_config를 지정하거나 CAMPUS_API_CONFIG 환경 변수를 설정하세요. C 키는 서버에만 존재하고 원본 자료를 data/에 복사할 필요가 없습니다. 서버가 `/v1/departments`, 학과별 curricula, 전체 courses 페이지를 읽어 기존 B API를 제공합니다. 현재 데이터와 키는 GitHub에 포함하지 않습니다. 상세 실행 방법은 API.md의 C API 연결 부분에 있습니다.

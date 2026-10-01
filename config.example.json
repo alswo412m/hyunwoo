@@ -1,0 +1,4 @@
+{
+  "data_source": "campus-api",
+  "campus_api_config": "/absolute/path/to/B-delivery/config.json"
+}
