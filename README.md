@@ -1,10 +1,10 @@
 # 시간표 조합 엔진 (B 파트)
 
-A 파트가 정리한 요청을 받아 가능한 시간표를 모두 반환하는 TypeScript 모듈입니다. 화면이나 CSV 변환은 포함하지 않습니다.
+A 파트가 정리한 요청을 받아 가능한 시간표를 모두 반환하는 TypeScript 모듈입니다. C 파트 JSON을 연결하는 어댑터, 요람 체크, 저장·복원과 통합 확인용 데모 화면을 포함합니다. CSV 원문 변환은 C 파트가 담당합니다.
 
 ```ts
-import { generateTimetables } from './src/index.ts';
-import type { TimetableRequest } from './src/index.ts';
+import { generateTimetables } from './dist/index.js';
+import type { TimetableRequest } from './dist/index.js';
 const response = generateTimetables(request as TimetableRequest);
 ```
 
@@ -12,7 +12,7 @@ const response = generateTimetables(request as TimetableRequest);
 
 ## A 파트 계약
 
-제안한 TimetableRequest/TimetableResponse의 필수 필드와 함수명을 유지합니다. 한 `courses` 항목은 하나의 과목 선택 그룹이며 `sections`는 그 그룹의 대안입니다. 각 시간표에서 그룹당 하나의 후보를 선택합니다. 같은 과목명·다른 교수의 수업은 사용자가 함께 선택했을 때 A 파트가 한 과목 그룹의 sections로 전달합니다. 엔진은 과목명만으로 독립된 courseId를 자동 병합하지 않습니다. courseId는 요청 안에서 유일해야 하고 sectionId는 과목 안에서 유일해야 합니다. 서로 다른 학수번호를 동일 과목으로 오인하지 않도록 그룹 생성 시 확인하세요.
+제안한 TimetableRequest/TimetableResponse의 필수 필드와 함수명을 유지합니다. 한 `courses` 항목은 하나의 과목 선택 그룹이며 `sections`는 그 그룹의 대안입니다. 각 시간표에서 그룹당 하나의 후보를 선택합니다. 같은 과목의 다른 교수 수업은 사용자가 함께 선택했을 때 A 파트가 한 과목 그룹의 sections로 전달합니다. 같은 과목명이라도 학수번호가 다르면 독립적으로 유지합니다. 엔진은 과목명만으로 독립된 courseId를 자동 병합하지 않습니다. courseId는 요청 안에서 유일해야 하고 sectionId는 과목 안에서 유일해야 합니다. 서로 다른 학수번호를 동일 과목으로 오인하지 않도록 그룹 생성 시 확인하세요.
 
 추가 선택 필드:
 
@@ -52,3 +52,13 @@ const response = generateTimetables(request as TimetableRequest);
 ## 검증
 
 Node.js 22.6 이상(권장 24)에서 `npm install`, `npm test`, `npm run typecheck`를 실행합니다. 엔진 런타임 외부 의존성은 없습니다.
+
+## 요람 체크와 실제 데이터 연결
+
+`src/helpers.ts`에 `loadJson`, `validateOfferings`, `validateCurriculum`, `buildCatalog`, `createDemoStudent`, `createRequest`, `resolveCandidate`, `checkCurriculum`, `saveTimetable`, `loadTimetable`을 제공합니다. 제공받은 전체 49개 요람과 1,521개 강좌를 로컬 `data/`에 배치해 검증했습니다. 원본 데이터는 GitHub에 포함하지 않습니다. 실행 전에 `data/courses_2026_2.json`, `data/curricula/index.json` 및 index에 등록된 요람 JSON을 배치하세요. 학생 이수 내역은 가상이며 1학년 요람 과목 최대 8개와 가상 교양 18학점으로 시작합니다. 데모에서 체크로 수정할 수 있습니다.
+
+학과별 요람 과목에 해당하는 전필/전선만 해당 학생의 전공 학점으로 인정합니다. 다른 학과 전공은 전체 학점에만 포함합니다. 교양은 현재 기초/소양/심화/교양/기교/지교 분류를 합산하며 세부 영역과 대체 인정은 판정하지 않습니다. 동일 학수번호 이수·예정 과목은 중복 합산하지 않습니다. requiredCourses는 필수 과목의 이수/예정/미이수/학수번호 미확인 상태를 제공합니다. creditCriteriaSatisfied는 학점 기준에 한정하며 졸업 가능 여부가 아닙니다. null 기준은 확인 필요로 유지합니다. 본문 추가 조건은 원문 안내로 표시합니다.
+
+## 통합 데모
+
+`npm run demo` 후 [데모 화면](http://127.0.0.1:4173/demo/)을 엽니다. 학과 선택, 검색, 후보 선택, 우선순위, 불가 시간, 학점 조건, 전체 조합 페이지, 주간 수업 목록, 결과 선택, 학과별 저장·복원, 가상 이수 편집, 예상 요람 체크까지 연결되어 있습니다. A 파트의 공식 화면에 붙이는 방법과 C 파트 데이터 계약은 [TEAM_HANDOFF.md](TEAM_HANDOFF.md)에 있습니다.

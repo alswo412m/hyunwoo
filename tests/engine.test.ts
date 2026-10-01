@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { generateTimetables, timesOverlap } from '../src/index.ts';
-import type { Course, TimetableRequest, TimeSlot } from '../src/index.ts';
+import { generateTimetables, timesOverlap } from '../dist/index.js';
+import type { Course, TimetableRequest, TimeSlot } from '../dist/index.js';
 const slot = (startTime: string, endTime: string, weeks?: number[]): TimeSlot => ({ day: 'MON', startTime, endTime, ...(weeks ? { weeks } : {}) });
 const course = (id: string, times: TimeSlot[][]): Course => ({ courseId: id, courseName: id, credits: 3, category: '전선', requirement: 'optional', sections: times.map((days, i) => ({ sectionId: `${id}-${i}`, days, classroom: null })) });
 const request = (courses: Course[]): TimetableRequest => ({ semester: '2026-2', major: '경찰학과', grade: 2, courses, conditions: { minCredits: null, maxCredits: null, unavailableTimes: [] } });
