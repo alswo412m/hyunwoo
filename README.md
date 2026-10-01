@@ -62,3 +62,7 @@ Node.js 22.6 이상(권장 24)에서 `npm install`, `npm test`, `npm run typeche
 ## 통합 데모
 
 `npm run demo` 후 [데모 화면](http://127.0.0.1:4173/demo/)을 엽니다. 학과 선택, 검색, 후보 선택, 반드시 포함 여부, 불가 시간, 학점 조건, 전체 조합 페이지, 08:00–22:00 주간 시간표 격자, 결과 선택, 학과별 저장·복원, 가상 이수 편집, 예상 요람 체크까지 연결되어 있습니다. A 파트의 공식 화면에 붙이는 방법과 C 파트 데이터 계약은 [TEAM_HANDOFF.md](TEAM_HANDOFF.md)에 있습니다.
+
+## HTTP API
+
+`npm run build && npm start`로 API와 demo를 함께 실행합니다. `src/server.ts`는 학과/강좌/가상 학생/시간표 생성/요람 체크 API를 제공하고, `src/api-client.ts`는 A 화면의 타입 지정 fetch 호출을 제공합니다. demo는 이제 이 API를 사용합니다. 실행 환경, CORS, 오류와 A 연결 예시는 [API.md](API.md)에 있습니다. `npm test`는 HTTP 통합 검증을 포함합니다. 원본 C JSON이 없는 환경에서는 실제 자료 통합 테스트를 건너뜁니다.
