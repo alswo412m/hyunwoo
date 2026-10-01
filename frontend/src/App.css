@@ -21,3 +21,54 @@
 .selected-course-list .plan-card { width: 100%; box-sizing: border-box; }
 .course-list .course-row { text-align: left; }
 @media (max-width: 900px) { .course-tabs { gap: 5px; } .empty-selection, .handoff-card { min-height: 150px; padding: 20px !important; } }
+
+.selection-chip { display:flex; align-items:center; gap:8px; padding:7px 10px; border-radius:10px; background:#f0f5f1; color:#263b33; font-size:13px; }
+.selection-chip select, .time-entry select, .time-entry input { min-height:36px; border:1px solid #dce5df; border-radius:8px; background:#fff; padding:6px 8px; color:#263b33; }
+.selection-chip select { margin-left:auto; }
+.selection-chip .chip { border:0; background:transparent; cursor:pointer; }
+.condition-grid { display:grid; gap:10px; margin:18px 0; padding:15px; border-radius:12px; background:#f7f9f7; }
+.condition-grid label { display:flex; align-items:center; justify-content:space-between; gap:10px; font-weight:650; }
+.condition-grid label span { display:flex; align-items:center; gap:7px; }
+.condition-grid input { width:82px; min-height:40px; box-sizing:border-box; border:1px solid #dce5df; border-radius:8px; padding:8px; }
+.time-condition { margin:16px 0; }
+.time-condition h3 { margin:0 0 10px; font-size:15px; }
+.time-entry { display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
+.time-entry input { width:102px; box-sizing:border-box; }
+.time-entry button, .time-chip button { border:0; border-radius:8px; background:#e8f0eb; padding:8px 10px; color:#365e4d; cursor:pointer; }
+.time-chip { display:flex; justify-content:space-between; align-items:center; margin-top:7px; padding:6px 10px; border-radius:8px; background:#f3f6f4; font-size:13px; }
+.section-list { display:flex; flex-direction:column; gap:8px; margin-top:12px; }
+.section-option { display:grid; grid-template-columns:minmax(60px,auto) 1fr; gap:5px 12px; padding:10px; border-radius:10px; background:#f7f9f7; font-size:13px; }
+.section-option span { color:#365e4d; }
+.section-option small { grid-column:2; color:#7b8981; }
+.candidate-list { display:flex; flex-direction:column; gap:12px; margin-top:18px; }
+.candidate-card { padding:18px; border:1px solid #e3eae5; border-radius:14px; background:#fff; }
+.candidate-card p { margin:8px 0; color:#53645a; }
+.candidate-card small { display:block; color:#9a7047; }
+@media (max-width: 700px) { .selection-chip { flex-wrap:wrap; } .condition-grid label { align-items:flex-start; flex-direction:column; } .section-option { grid-template-columns:1fr; } .section-option small { grid-column:1; } }
+
+/* Wide course selection and stacked candidate results */
+.workspace{display:flex;flex-direction:column;gap:22px;align-items:stretch}
+.settings{position:static;max-height:none;overflow:visible;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+.settings>.panel-title,.settings>.condition-controls,.settings>.time-chips,.settings>.section-head,.settings>.course-tabs,.settings>.filter-caption,.settings>.detail-filters,.settings>.notice,.settings>.course-list,.settings>.text-button,.settings>.selected-box,.settings>.primary-button{grid-column:1/-1}
+.condition-controls{display:grid;grid-template-columns:minmax(170px,1fr) minmax(180px,1.15fr) minmax(145px,.8fr) minmax(240px,1.2fr) minmax(330px,2fr);gap:14px;align-items:end}
+.college-filter,.major-picker,.filter-row,.credit-control,.time-condition{min-width:0}
+.college-filter label,.time-condition>label{display:block;margin:0 0 7px;font-size:13px;font-weight:650;color:#53615b}
+.college-filter select,.major-picker input,.filter-row select{width:100%;min-height:44px;box-sizing:border-box;border:1px solid #dfe6e1;border-radius:10px;padding:0 12px;background:#fff;color:#27312c;font:inherit}
+.filter-row{display:block}.filter-row label{display:block;margin:0 0 7px}
+.credit-control{display:flex;flex-direction:column;gap:7px}.credit-control span{display:flex;align-items:center;gap:7px;white-space:nowrap}.credit-control input{width:82px;min-height:44px;box-sizing:border-box;border:1px solid #dce5df;border-radius:9px;padding:8px}
+.time-entry{display:flex;align-items:center;gap:6px;min-width:0}.time-entry select,.time-entry input{min-height:40px;min-width:0;border:1px solid #dce5df;border-radius:8px;background:#fff;padding:6px 8px;color:#263b33}.time-entry select{width:86px}.time-entry input{width:108px;box-sizing:border-box}
+.time-chips{display:flex;flex-wrap:wrap;gap:8px}.time-chip{display:flex;align-items:center;gap:10px;padding:6px 10px;border-radius:9px;background:#f0f5f1;color:#365e4d;font-size:12px}
+.section-head .search{width:min(360px,45%);margin:0;padding:11px 13px;border:1px solid #e1e8e3;border-radius:10px;font:inherit}
+.course-tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px;border-bottom:1px solid #e8eeea}.course-tabs button{flex:0 0 auto;min-height:42px;padding:0 16px;border:1px solid #e3e9e5;border-radius:10px;background:#fff;color:#64716b;font:inherit;font-weight:650;cursor:pointer}.course-tabs button.selected{border-color:#547f6b;background:#edf4ef;color:#315b47}
+.filter-caption{font-size:12px;color:#7c8982;line-height:1.5}.detail-filters{display:flex;flex-wrap:wrap;gap:7px}.detail-filters button{flex:0 0 auto;padding:8px 11px;border:1px solid #e3e9e5;border-radius:10px;background:#fff;color:#64716b;font-size:12px;cursor:pointer}.detail-filters button.selected{border-color:#547f6b;background:#edf4ef;color:#315b47}
+.course-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));max-height:340px;overflow:auto;border:1px solid #edf1ee;border-radius:12px;padding:6px}.course-row{border-radius:8px;cursor:pointer}.add-icon{width:26px;height:26px;flex:0 0 26px;display:grid;place-items:center;border-radius:50%;background:#f2f5f2;color:#547965}.course-row.chosen .add-icon{background:#e5f1e8;color:#315b47}
+.primary-button{justify-self:end;min-width:240px;margin-top:2px;cursor:pointer}.primary-button:disabled{opacity:.55;cursor:not-allowed}
+.selected-course-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}.empty-selection{min-height:150px;padding:25px;display:flex;flex-direction:column;justify-content:center;gap:9px}.empty-selection h3,.empty-selection p{margin:0}.section-list{display:grid;gap:7px;margin-top:12px}.section-option{display:grid;grid-template-columns:75px 1fr;gap:5px 9px;padding:10px;border:1px solid #edf1ee;border-radius:9px;font-size:12px}.section-option span{color:#53645a}.section-option small{grid-column:2;color:#7b8981}
+.handoff-card{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}.handoff-card h3,.handoff-card p{margin:0}.handoff-card code{padding:7px 10px;background:#f2f5f2;border-radius:7px;color:#486553}
+.notice{position:static;padding:11px 14px;border-radius:9px;background:#eff5f0;color:#365e4d;font-size:13px}.notice button{margin-left:12px;border:0;background:none;color:#365e4d;cursor:pointer}
+@media(max-width:1100px){.condition-controls{grid-template-columns:repeat(3,minmax(0,1fr))}.time-condition{grid-column:span 2}}
+@media(max-width:700px){.workspace{gap:16px}.settings{padding:15px}.condition-controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.time-condition{grid-column:1/-1}.time-entry{flex-wrap:wrap}.time-entry input{flex:1;min-width:90px}.section-head{align-items:flex-start;flex-direction:column}.section-head .search{width:100%;box-sizing:border-box}.course-list{grid-template-columns:1fr;max-height:310px}.selected-course-list{grid-template-columns:1fr}.primary-button{width:100%;min-width:0}}
+.settings>.college-filter{grid-column:span 3}.settings>.major-picker{grid-column:span 3}.settings>.filter-row{grid-column:span 2}.settings>.condition-grid{grid-column:span 4;margin:0;padding:12px;background:#f7f9f7}.settings>.time-condition{grid-column:span 8;margin:0}.settings>.filter-row select{width:100%}.settings>.major-picker small{color:#89938e}.settings>.selected-box{min-width:0}.course-tabs{scrollbar-width:thin}
+@media(max-width:1100px){.settings>.college-filter{grid-column:span 4}.settings>.major-picker{grid-column:span 4}.settings>.filter-row{grid-column:span 4}.settings>.condition-grid{grid-column:span 5}.settings>.time-condition{grid-column:span 7}}
+@media(max-width:700px){.settings>.college-filter,.settings>.major-picker,.settings>.filter-row,.settings>.condition-grid,.settings>.time-condition{grid-column:1/-1}.condition-grid label{flex-wrap:wrap}}
+.settings>.search{grid-column:1/-1;width:100%;box-sizing:border-box;margin:0 0 6px}
