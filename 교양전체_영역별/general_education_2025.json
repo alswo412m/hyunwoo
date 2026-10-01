@@ -1,0 +1,5819 @@
+{
+  "curriculum_year": 2025,
+  "source_pdf": "2025학년도GLOCAL캠퍼스학사요람.pdf",
+  "source_pdf_pages": [
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "groups": [
+    {
+      "category": "기초",
+      "area": "글쓰기",
+      "courses": [
+        {
+          "course_code": "BKSA64611",
+          "name": "창의글쓰기",
+          "category": "기초",
+          "credits": 2,
+          "area": "글쓰기",
+          "area_original": "글쓰기",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7322",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7323",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7324",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7325",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7326",
+              "section": "05",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64612",
+          "name": "실용글쓰기",
+          "category": "기초",
+          "credits": 2,
+          "area": "글쓰기",
+          "area_original": "글쓰기",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7327",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7328",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7329",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7330",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7331",
+              "section": "05",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64613",
+          "name": "성찰글쓰기",
+          "category": "기초",
+          "credits": 2,
+          "area": "글쓰기",
+          "area_original": "글쓰기",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7332",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7333",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7334",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7335",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7336",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7337",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7338",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7339",
+              "section": "08",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7340",
+              "section": "09",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7341",
+              "section": "10",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7342",
+              "section": "11",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64623",
+          "name": "미디어글쓰기",
+          "category": "기초",
+          "credits": 2,
+          "area": "글쓰기",
+          "area_original": "글쓰기",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7353",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7354",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7355",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7356",
+              "section": "04",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "기초",
+      "area": "발표와토론",
+      "courses": [
+        {
+          "course_code": "BKSA39798",
+          "name": "비판적사고와토론",
+          "category": "기초",
+          "credits": 2,
+          "area": "발표와토론",
+          "area_original": "발표와토론",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7046",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7047",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7048",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7049",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7050",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7051",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7052",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7053",
+              "section": "08",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7054",
+              "section": "09",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64608",
+          "name": "공감적소통과발표",
+          "category": "기초",
+          "credits": 2,
+          "area": "발표와토론",
+          "area_original": "발표와토론",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7303",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7304",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7305",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7306",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7307",
+              "section": "05",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7308",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7309",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7310",
+              "section": "08",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64609",
+          "name": "열린사고와실용적말하기",
+          "category": "기초",
+          "credits": 2,
+          "area": "발표와토론",
+          "area_original": "발표와토론",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7311",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7312",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7313",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7314",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7315",
+              "section": "05",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64610",
+          "name": "협력적사고와토의",
+          "category": "기초",
+          "credits": 2,
+          "area": "발표와토론",
+          "area_original": "발표와토론",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7316",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7317",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7318",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7319",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7320",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7321",
+              "section": "06",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "기초",
+      "area": "외국어기초",
+      "courses": [
+        {
+          "course_code": "BKSA51431",
+          "name": "프랑스어기초",
+          "category": "기초",
+          "credits": 2,
+          "area": "외국어기초",
+          "area_original": "외국어기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA51432",
+          "name": "러시아어기초",
+          "category": "기초",
+          "credits": 2,
+          "area": "외국어기초",
+          "area_original": "외국어기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7073",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7074",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7075",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7076",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7077",
+              "section": "05",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58149",
+          "name": "일본어기초",
+          "category": "기초",
+          "credits": 2,
+          "area": "외국어기초",
+          "area_original": "외국어기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7186",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA53699",
+          "name": "KUGEP1",
+          "category": "기초",
+          "credits": 2,
+          "area": "외국어기초",
+          "area_original": "외국어기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7088",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7089",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7090",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7091",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7092",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7093",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7094",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7095",
+              "section": "08",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7096",
+              "section": "09",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7097",
+              "section": "10",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7098",
+              "section": "11",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7099",
+              "section": "12",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7100",
+              "section": "13",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7101",
+              "section": "14",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7102",
+              "section": "15",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7103",
+              "section": "16",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7104",
+              "section": "17",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7105",
+              "section": "18",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7106",
+              "section": "19",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7107",
+              "section": "20",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7108",
+              "section": "21",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7109",
+              "section": "22",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7110",
+              "section": "23",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA53700",
+          "name": "KUGEP2",
+          "category": "기초",
+          "credits": 2,
+          "area": "외국어기초",
+          "area_original": "외국어기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7111",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7112",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7113",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7114",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7115",
+              "section": "05",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7116",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7117",
+              "section": "07",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58109",
+          "name": "중국어기초",
+          "category": "기초",
+          "credits": 2,
+          "area": "외국어기초",
+          "area_original": "외국어기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7149",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7150",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7151",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7152",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7153",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7154",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7155",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7156",
+              "section": "08",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7157",
+              "section": "09",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7158",
+              "section": "10",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7159",
+              "section": "11",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "기초",
+      "area": "인문기초",
+      "courses": [
+        {
+          "course_code": "BKSA58110",
+          "name": "문학의고전",
+          "category": "기초",
+          "credits": 2,
+          "area": "인문기초",
+          "area_original": "인문기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7160",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7161",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7162",
+              "section": "03",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58112",
+          "name": "역사의고전",
+          "category": "기초",
+          "credits": 2,
+          "area": "인문기초",
+          "area_original": "인문기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7163",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7164",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7165",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7166",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7167",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7168",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7169",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7170",
+              "section": "08",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58113",
+          "name": "철학의고전",
+          "category": "기초",
+          "credits": 2,
+          "area": "인문기초",
+          "area_original": "인문기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7171",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7172",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7173",
+              "section": "03",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7174",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7175",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7176",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7177",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7178",
+              "section": "08",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "기초",
+      "area": "과학기초",
+      "courses": [
+        {
+          "course_code": "BKSA15891",
+          "name": "대학기초수학",
+          "category": "기초",
+          "credits": 2,
+          "area": "과학기초",
+          "area_original": "과학기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7042",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7043",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7044",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7045",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "8260",
+              "section": "05",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58133",
+          "name": "대학기초물리학",
+          "category": "기초",
+          "credits": 2,
+          "area": "과학기초",
+          "area_original": "과학기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7181",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7182",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58224",
+          "name": "대학기초화학",
+          "category": "기초",
+          "credits": 2,
+          "area": "과학기초",
+          "area_original": "과학기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7223",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7224",
+              "section": "02",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7225",
+              "section": "03",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7226",
+              "section": "04",
+              "cancelled": true
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59512",
+          "name": "대학기초생물학",
+          "category": "기초",
+          "credits": 2,
+          "area": "과학기초",
+          "area_original": "과학기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7265",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7266",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7267",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7268",
+              "section": "04",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA81308",
+          "name": "기초통계학",
+          "category": "기초",
+          "credits": 2,
+          "area": "과학기초",
+          "area_original": "과학기초",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7423",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7424",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "기초",
+      "area": "AI/데이터",
+      "courses": [
+        {
+          "course_code": "BKSA56558",
+          "name": "컴퓨팅적사고",
+          "category": "기초",
+          "credits": 2,
+          "area": "AI/데이터",
+          "area_original": "AI/데이터",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7142",
+              "section": "01",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7143",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7144",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7145",
+              "section": "04",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67912",
+          "name": "데이터리터러시",
+          "category": "기초",
+          "credits": 2,
+          "area": "AI/데이터",
+          "area_original": "AI/데이터",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 35,
+          "source_printed_page": 31,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7387",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7388",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7389",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7390",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7391",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7392",
+              "section": "06",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67913",
+          "name": "AI리터러시",
+          "category": "기초",
+          "credits": 2,
+          "area": "AI/데이터",
+          "area_original": "AI/데이터",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7393",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7394",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7395",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7396",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7397",
+              "section": "05",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67914",
+          "name": "빅데이터의기초",
+          "category": "기초",
+          "credits": 2,
+          "area": "AI/데이터",
+          "area_original": "AI/데이터",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7398",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7399",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7400",
+              "section": "03",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67915",
+          "name": "프로그래밍의기초",
+          "category": "기초",
+          "credits": 2,
+          "area": "AI/데이터",
+          "area_original": "AI/데이터",
+          "section_heading": "기초교양",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7401",
+              "section": "01",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7402",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7403",
+              "section": "03",
+              "cancelled": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "심화",
+      "area": "글로벌언어",
+      "courses": [
+        {
+          "course_code": "BKSA58152",
+          "name": "글쓰기심화",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7187",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA46712",
+          "name": "러시아어회화",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA59486",
+          "name": "KUGEP3(EnglishSpeaking)",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA66432",
+          "name": "쉽게배우는러시아어",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7370",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58231",
+          "name": "KUGEP4(EnglishWriting)",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA49630",
+          "name": "언어의세계",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7068",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA13364",
+          "name": "영어회화1",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7031",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7032",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7033",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7034",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7035",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7036",
+              "section": "06",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA12943",
+          "name": "영어회화2",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7027",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7028",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA63514",
+          "name": "입트이는영어동사",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7292",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA50187",
+          "name": "영어프리젠테이션",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7070",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA52788",
+          "name": "기초영어문장학습",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7087",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA11155",
+          "name": "스크린영어",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7019",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7020",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58146",
+          "name": "시사영어읽기",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7184",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA51421",
+          "name": "토익1",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7071",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA51422",
+          "name": "토익2",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7072",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58147",
+          "name": "한중소통연습",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7185",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58219",
+          "name": "미디어중국어",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7222",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64600",
+          "name": "중국어심화",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7297",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA62504",
+          "name": "생활일본어",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA45233",
+          "name": "프랑스어회화",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA46814",
+          "name": "미디어프랑스어",
+          "category": "심화",
+          "credits": 2,
+          "area": "글로벌언어",
+          "area_original": "글로벌언어",
+          "section_heading": "글로벌언어",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": []
+        }
+      ]
+    },
+    {
+      "category": "심화",
+      "area": "인간과문화",
+      "courses": [
+        {
+          "course_code": "BKSA11049",
+          "name": "문학의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7013",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7014",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64604",
+          "name": "도시인문학",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7301",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA39813",
+          "name": "문학과광고",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7055",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA04085",
+          "name": "영미문화의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7002",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7003",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA63419",
+          "name": "문학속팬데믹",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58160",
+          "name": "유럽의사회와문화",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 36,
+          "source_printed_page": 32,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA11028",
+          "name": "동화의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58162",
+          "name": "테마별로배우는중국문화",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7192",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA62516",
+          "name": "스토리텔링과판타지문학",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7281",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA62513",
+          "name": "시베리아지역학",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7279",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "8271",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA11168",
+          "name": "신화와문화",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA62515",
+          "name": "문화콘텐츠의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7280",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA62509",
+          "name": "삼국지인문학",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA64618",
+          "name": "한문고전읽는법",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7351",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59488",
+          "name": "한국고중세사특강",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7259",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58226",
+          "name": "테마별로배우는한국문화1",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA59489",
+          "name": "한국중근세사특강",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7260",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58227",
+          "name": "테마별로배우는한국문화2",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7227",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64603",
+          "name": "근대한국과세계의만남",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7300",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA62510",
+          "name": "팬덤과대중문화콘텐츠의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7277",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64605",
+          "name": "한일교류의역사",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7302",
+              "section": "01",
+              "cancelled": true
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA65498",
+          "name": "인류문명과갈등",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7358",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58154",
+          "name": "동아시아문화사",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7188",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58163",
+          "name": "한자를통해배우는삶의지혜",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7193",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58155",
+          "name": "전쟁으로보는서양사",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7189",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58164",
+          "name": "음식인문학",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7194",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA65866",
+          "name": "철학고전톺아보기",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7368",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA63538",
+          "name": "책과기록의역사",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7294",
+              "section": "01",
+              "cancelled": true
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58158",
+          "name": "동양철학의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7190",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA63378",
+          "name": "관계를이어주는소통의교양학",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58159",
+          "name": "현대사회와철학",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7191",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA65867",
+          "name": "AI시대의휴먼리터러시",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA01709",
+          "name": "서양철학사",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7001",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67904",
+          "name": "소설로읽는한국문화100년사",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7378",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA11067",
+          "name": "미학개론",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7015",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA68365",
+          "name": "로컬리티와인문학",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7407",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA48172",
+          "name": "논리와비판적사고",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7062",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA49983",
+          "name": "문화유산의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과문화",
+          "area_original": "인간과문화",
+          "section_heading": "인간과문화",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7069",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "심화",
+      "area": "인간과사회",
+      "courses": [
+        {
+          "course_code": "BKSA51446",
+          "name": "세계정세바로보기",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7078",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA52782",
+          "name": "사회학의초대",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7086",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58179",
+          "name": "유라시아시대의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA66437",
+          "name": "시대의가치와트렌드캐치",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7373",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58176",
+          "name": "러시아바로알기",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7197",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA11247",
+          "name": "인간과복지",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7026",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58175",
+          "name": "고전으로읽는국가론",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7196",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA63513",
+          "name": "일상의여성학",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7291",
+              "section": "01",
+              "cancelled": true
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58178",
+          "name": "신문으로읽는지방자치",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA44199",
+          "name": "현대사회와범죄",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA62946",
+          "name": "사건으로보는정치사",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA11192",
+          "name": "심리학의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7021",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA66433",
+          "name": "북한전문가와함께배우는통일이야기",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7371",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA55245",
+          "name": "재미있는인간관계의심리학",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA65499",
+          "name": "창업기업가론",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7359",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7360",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA65500",
+          "name": "현대인의정신건강과자기이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7361",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA62944",
+          "name": "4차산업혁명과법",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7284",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA65610",
+          "name": "흔들리는20대:청년심리학",
+          "category": "심화",
+          "credits": 1,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "8293",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64597",
+          "name": "인공지능과인권",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7296",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA53728",
+          "name": "미디어와세상",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7119",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58166",
+          "name": "경제란무엇인가",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7195",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA60545",
+          "name": "미디어리터러시",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7270",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA61154",
+          "name": "경제생활과법질서",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7271",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA65865",
+          "name": "탐정으로살아보기",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA59491",
+          "name": "경제현상과수학",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA67903",
+          "name": "금융생활과역량탐구",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 37,
+          "source_printed_page": 33,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7377",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA11223",
+          "name": "영화로경제읽기",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7022",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67905",
+          "name": "여론과미디어",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7379",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59490",
+          "name": "4차산업혁명의미래와직업",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA67908",
+          "name": "생활법률",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7380",
+              "section": "01",
+              "cancelled": true
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA51447",
+          "name": "창업과경영",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7079",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA68366",
+          "name": "뇌과학여행",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7408",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA53724",
+          "name": "성공하는대학생의비전리더십",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7118",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA53992",
+          "name": "성인을위한평생학습",
+          "category": "심화",
+          "credits": 2,
+          "area": "인간과사회",
+          "area_original": "인간과사회",
+          "section_heading": "인간과사회",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7127",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "심화",
+      "area": "과학과기술",
+      "courses": [
+        {
+          "course_code": "BKSA59500",
+          "name": "빅데이터활용",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58220",
+          "name": "건강과질병",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA53734",
+          "name": "앱과프로그래밍",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA51457",
+          "name": "미생물의세계",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58190",
+          "name": "프로그래밍활용",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA47127",
+          "name": "동물의행동",
+          "category": "심화",
+          "credits": 1,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "8296",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59503",
+          "name": "확률과게임이론",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58187",
+          "name": "생태환경의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7200",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58189",
+          "name": "환경과미래",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA13630",
+          "name": "식물자원의이용",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7040",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7041",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59502",
+          "name": "환경과에너지",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7262",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58188",
+          "name": "세계의정원",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7201",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58131",
+          "name": "도시환경의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7180",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA54961",
+          "name": "자생식물의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7139",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59497",
+          "name": "기후변화개론",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7261",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA11415",
+          "name": "화학의세계",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58193",
+          "name": "지역환경과도시건축",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7202",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA45304",
+          "name": "생활속의화학",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58194",
+          "name": "친환경건축과생활",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7203",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67910",
+          "name": "심화미적분학",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7385",
+              "section": "01",
+              "cancelled": true
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA65611",
+          "name": "우주로의여행",
+          "category": "심화",
+          "credits": 1,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "8294",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67921",
+          "name": "예술로보는과학",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7404",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7405",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7406",
+              "section": "03",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA61155",
+          "name": "창조적아이디어발상법",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7272",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58182",
+          "name": "인간의성장과발달",
+          "category": "심화",
+          "credits": 2,
+          "area": "과학과기술",
+          "area_original": "과학과기술",
+          "section_heading": "과학과기술",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        }
+      ]
+    },
+    {
+      "category": "심화",
+      "area": "예술과체육",
+      "courses": [
+        {
+          "course_code": "BKSA39837",
+          "name": "대중예술의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7056",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7057",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA11219",
+          "name": "연극의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA66431",
+          "name": "크로모테라피를이용한힐링디자인",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7369",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA66438",
+          "name": "영화로디자인읽기",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7374",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA57742",
+          "name": "몸의미학",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7146",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7147",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58207",
+          "name": "영화와애니메이션의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA11137",
+          "name": "서양미술의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7017",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7018",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA53751",
+          "name": "클래식음악여행",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7126",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA11021",
+          "name": "동양미술의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7011",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7012",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA63563",
+          "name": "팝음악인사이트",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7295",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59504",
+          "name": "그림과문학이야기",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7263",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64602",
+          "name": "삶을치유하는음악",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7298",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7299",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA53746",
+          "name": "디자인으로세상읽기",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7125",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA51466",
+          "name": "현대사회와스포츠",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7083",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58200",
+          "name": "지식재산권의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7209",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA11231",
+          "name": "운동과건강관리",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7023",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7024",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7025",
+              "section": "03",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA48185",
+          "name": "뮤지컬의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7063",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7064",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58208",
+          "name": "오페라의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "예술과체육",
+          "area_original": "예술과체육",
+          "section_heading": "예술과체육",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 38,
+          "source_printed_page": 34,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7217",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "심화",
+      "area": "융복합",
+      "courses": [
+        {
+          "course_code": "BKSA58212",
+          "name": "인문학의오뒷세이아",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7218",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58217",
+          "name": "영상미디어와현대사회",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7221",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58213",
+          "name": "문화콘텐츠:한류",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7219",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA65612",
+          "name": "음악은왜치료적인가",
+          "category": "심화",
+          "credits": 1,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "8295",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA62512",
+          "name": "로봇과인간",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7278",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58215",
+          "name": "창의적문제해결과의사결정",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA61160",
+          "name": "사이언스디자인의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7275",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA63359",
+          "name": "감성커뮤니케이션",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7286",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7287",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA62508",
+          "name": "SF문학과미래윤리",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7276",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA65502",
+          "name": "포스트휴먼이슈읽기",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7363",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA61159",
+          "name": "영미문학과생활법률",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7274",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA49240",
+          "name": "뷰티테라피",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7065",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7066",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7067",
+              "section": "03",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA65501",
+          "name": "4차산업혁명과사회현상의이해",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA62943",
+          "name": "요리를통해배우는열유체",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA64877",
+          "name": "ESG·환경·식품·경제",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7357",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA66888",
+          "name": "지역재생리빙랩",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7375",
+              "section": "01",
+              "cancelled": true
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA66436",
+          "name": "현대사회와ESG의적용",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7372",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59511",
+          "name": "현대사회의먹거리쟁점",
+          "category": "심화",
+          "credits": 2,
+          "area": "융복합",
+          "area_original": "융복합",
+          "section_heading": "융복합",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7264",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "소양",
+      "area": "인성",
+      "courses": [
+        {
+          "course_code": "BZZA62440",
+          "name": "성신의대학생활지도",
+          "category": "소양",
+          "credits": 1,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA63407",
+          "name": "디지털시대의세계시민-되기",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7288",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64601",
+          "name": "인권의가치와현대사회",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA10922",
+          "name": "건학정신과대학생활",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7004",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7005",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7006",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7007",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7008",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7009",
+              "section": "06",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64619",
+          "name": "관계를이어주는우리시대의대화법",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7352",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59466",
+          "name": "나우리택견인성",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7228",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7229",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7230",
+              "section": "03",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA61158",
+          "name": "삶의지혜나눔",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58105",
+          "name": "중원역사문화론(충주의삶과문화)",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7148",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67902",
+          "name": "좋은삶이란무엇인가",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7376",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "8265",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64615",
+          "name": "글로컬사회봉사",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7344",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7345",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7346",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7347",
+              "section": "04",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67911",
+          "name": "슬로리딩과자기돌봄",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7386",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58108",
+          "name": "글로컬교양특강",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA67906",
+          "name": "지도자의자질과인성",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58106",
+          "name": "문화간소통탄뎀체험",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA64614",
+          "name": "커뮤니케이션과글로벌시티즌십",
+          "category": "소양",
+          "credits": 2,
+          "area": "인성",
+          "area_original": "인성",
+          "section_heading": "인성",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 39,
+          "source_printed_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7343",
+              "section": "01",
+              "cancelled": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "소양",
+      "area": "실무",
+      "courses": [
+        {
+          "course_code": "BKSA59474",
+          "name": "취업전략수립및역량개발3",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7244",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59786",
+          "name": "4차산업혁명시대의린스타트업",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA64617",
+          "name": "취업면접과전략",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7349",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7350",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA56134",
+          "name": "대학생창업실습",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7141",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64616",
+          "name": "여성리더십과경력개발",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7348",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59478",
+          "name": "창업속의법률디자인",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7246",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58145",
+          "name": "NCS직업기초능력",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA63535",
+          "name": "창업에필요한특허·디자인·상표",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7293",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58120",
+          "name": "기업분석과NCS직무수행능력",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA62945",
+          "name": "지적재산권사례탐구",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7285",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58114",
+          "name": "MOS",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": true,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7179",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59476",
+          "name": "생활과금융",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA62517",
+          "name": "MOS활용",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7282",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59472",
+          "name": "취업전략수립및역량개발1",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7231",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7232",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7233",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7234",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7235",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7236",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7237",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7238",
+              "section": "08",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7239",
+              "section": "09",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7240",
+              "section": "10",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7241",
+              "section": "11",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7242",
+              "section": "12",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59473",
+          "name": "취업전략수립및역량개발2",
+          "category": "소양",
+          "credits": 2,
+          "area": "실무",
+          "area_original": "실무",
+          "section_heading": "실무",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7243",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "소양",
+      "area": "실기",
+      "courses": [
+        {
+          "course_code": "BKSA58197",
+          "name": "구기스포츠1(농구)",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7208",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA54360",
+          "name": "라틴댄스",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7128",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59480",
+          "name": "구기스포츠2(배구)",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7249",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "8263",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59485",
+          "name": "호신술과자기방어",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7257",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7258",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA53743",
+          "name": "축구(초급)",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7121",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA53745",
+          "name": "미술실기의기초",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7123",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7124",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA53744",
+          "name": "축구(중급)",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7122",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58202",
+          "name": "기초크로키실기",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7210",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7211",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7212",
+              "section": "03",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58195",
+          "name": "라켓스포츠1(배드민턴)",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7204",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59481",
+          "name": "도예문화의이해",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58196",
+          "name": "라켓스포츠2(스쿼시/테니스)",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7205",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7206",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7207",
+              "section": "03",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58203",
+          "name": "일상스케치를활용한상상구현",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7213",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7214",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67909",
+          "name": "레저스포츠(골프)",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7381",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7382",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7383",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7384",
+              "section": "04",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59482",
+          "name": "사진과생활",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58199",
+          "name": "수상스키",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA58204",
+          "name": "취미로배우는모형제작",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7215",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7216",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59483",
+          "name": "설상스포츠",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7253",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7254",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7255",
+              "section": "03",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59707",
+          "name": "1인미디어시대모바일촬영편집",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA53742",
+          "name": "요가",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7120",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59484",
+          "name": "스토리텔링창작",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7256",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA51469",
+          "name": "헬스앤휘트니스",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7084",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7085",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA63502",
+          "name": "영화음악의이해",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7289",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7290",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA51454",
+          "name": "운동과다이어트",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7080",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7081",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7082",
+              "section": "03",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59479",
+          "name": "감성합창",
+          "category": "소양",
+          "credits": 2,
+          "area": "실기",
+          "area_original": "실기",
+          "section_heading": "실기",
+          "audience": null,
+          "elearning_marked": false,
+          "source_pdf_page": 40,
+          "source_printed_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7247",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7248",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "other_courses": [
+    {
+      "course_code": "BKSA58232",
+      "name": "글쓰기1",
+      "category": "기초",
+      "credits": 3,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "기초교양",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 35,
+      "source_printed_page": 31,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA58233",
+      "name": "글쓰기2",
+      "category": "기초",
+      "credits": 3,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "기초교양",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 35,
+      "source_printed_page": 31,
+      "offering_references_2026_2": [
+        {
+          "offering_id": "8257",
+          "section": "01",
+          "cancelled": false
+        },
+        {
+          "offering_id": "8258",
+          "section": "02",
+          "cancelled": false
+        }
+      ]
+    },
+    {
+      "course_code": "BKSA66439",
+      "name": "평생학습자를위한성찰글쓰기",
+      "category": "기초",
+      "credits": 3,
+      "area": null,
+      "area_original": "-",
+      "section_heading": "기초교양",
+      "audience": null,
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA66440",
+      "name": "평생학습자를위한KUGEP1",
+      "category": "기초",
+      "credits": 3,
+      "area": null,
+      "area_original": "-",
+      "section_heading": "기초교양",
+      "audience": null,
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA67907",
+      "name": "공감적소통과말하기",
+      "category": "기초",
+      "credits": 3,
+      "area": null,
+      "area_original": "-",
+      "section_heading": "기초교양",
+      "audience": null,
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA54942",
+      "name": "한국어작문1",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA54943",
+      "name": "한국어작문2",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": [
+        {
+          "offering_id": "7133",
+          "section": "01",
+          "cancelled": false
+        },
+        {
+          "offering_id": "7134",
+          "section": "02",
+          "cancelled": false
+        }
+      ]
+    },
+    {
+      "course_code": "BKSA54940",
+      "name": "한국어회화1",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA54941",
+      "name": "한국어회화2",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": [
+        {
+          "offering_id": "7131",
+          "section": "01",
+          "cancelled": false
+        },
+        {
+          "offering_id": "7132",
+          "section": "02",
+          "cancelled": false
+        }
+      ]
+    },
+    {
+      "course_code": "BKSA54938",
+      "name": "생활한국어1",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA54939",
+      "name": "생활한국어2",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": [
+        {
+          "offering_id": "7129",
+          "section": "01",
+          "cancelled": false
+        },
+        {
+          "offering_id": "7130",
+          "section": "02",
+          "cancelled": false
+        }
+      ]
+    },
+    {
+      "course_code": "BKSA46965",
+      "name": "실용한국어1",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA46966",
+      "name": "실용한국어2",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": [
+        {
+          "offering_id": "7059",
+          "section": "01",
+          "cancelled": false
+        },
+        {
+          "offering_id": "7060",
+          "section": "02",
+          "cancelled": false
+        }
+      ]
+    },
+    {
+      "course_code": "BKSA54944",
+      "name": "한국어고급표현1",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA54945",
+      "name": "한국어고급표현2",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": [
+        {
+          "offering_id": "7135",
+          "section": "01",
+          "cancelled": false
+        },
+        {
+          "offering_id": "7136",
+          "section": "02",
+          "cancelled": false
+        }
+      ]
+    },
+    {
+      "course_code": "BKSA63530",
+      "name": "주제가있는한국어프리젠테이션",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA53714",
+      "name": "TOPIK중급",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA54946",
+      "name": "TOPIK고급",
+      "category": "심화",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "글로벌언어",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 36,
+      "source_printed_page": 32,
+      "offering_references_2026_2": [
+        {
+          "offering_id": "7137",
+          "section": "01",
+          "cancelled": false
+        },
+        {
+          "offering_id": "7138",
+          "section": "02",
+          "cancelled": false
+        }
+      ]
+    },
+    {
+      "course_code": "BKSA62514",
+      "name": "한국대학생활지도",
+      "category": "소양",
+      "credits": 2,
+      "area": null,
+      "area_original": "외국인",
+      "section_heading": "인성",
+      "audience": "외국인",
+      "elearning_marked": false,
+      "source_pdf_page": 39,
+      "source_printed_page": 35,
+      "offering_references_2026_2": []
+    }
+  ],
+  "counts": {
+    "기초": 32,
+    "심화": 166,
+    "소양": 55
+  },
+  "notes": [
+    "영역은 2025 요람 원문 기준. 학기별 개설 여부 및 영역 변경을 보장하지 않음.",
+    "외국인 또는 - 표기 과목을 일반 영역에 임의 배정하지 않음. 심화 외국인 과목은 글로벌언어 표에 있지만 세부영역 원문은 외국인.",
+    "KU소양은 인성·실무·실기를 포함하는 상위 구분. 인성은 별도 대분류가 아님.",
+    "과목 목록 전체가 필수인 것은 아님. 교양 영역별 학점 및 대상별 예외는 별도 이수 기준을 적용.",
+    "2026-2 참조는 학수번호로 연결. 현재 학기 공식 영역을 검증했다는 뜻이 아님."
+  ]
+}

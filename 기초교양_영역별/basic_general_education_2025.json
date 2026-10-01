@@ -1,0 +1,1185 @@
+{
+  "curriculum_year": 2025,
+  "source": "2025학년도GLOCAL캠퍼스학사요람.pdf",
+  "groups": [
+    {
+      "area": "글쓰기",
+      "courses": [
+        {
+          "course_code": "BKSA64611",
+          "name": "창의글쓰기",
+          "credits": 2,
+          "category": "기초",
+          "area": "글쓰기",
+          "area_original": "글쓰기",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7322",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7323",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7324",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7325",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7326",
+              "section": "05",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64612",
+          "name": "실용글쓰기",
+          "credits": 2,
+          "category": "기초",
+          "area": "글쓰기",
+          "area_original": "글쓰기",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7327",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7328",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7329",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7330",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7331",
+              "section": "05",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64613",
+          "name": "성찰글쓰기",
+          "credits": 2,
+          "category": "기초",
+          "area": "글쓰기",
+          "area_original": "글쓰기",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7332",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7333",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7334",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7335",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7336",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7337",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7338",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7339",
+              "section": "08",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7340",
+              "section": "09",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7341",
+              "section": "10",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7342",
+              "section": "11",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64623",
+          "name": "미디어글쓰기",
+          "credits": 2,
+          "category": "기초",
+          "area": "글쓰기",
+          "area_original": "글쓰기",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7353",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7354",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7355",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7356",
+              "section": "04",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "area": "발표와토론",
+      "courses": [
+        {
+          "course_code": "BKSA39798",
+          "name": "비판적사고와토론",
+          "credits": 2,
+          "category": "기초",
+          "area": "발표와토론",
+          "area_original": "발표와토론",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7046",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7047",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7048",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7049",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7050",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7051",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7052",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7053",
+              "section": "08",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7054",
+              "section": "09",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64608",
+          "name": "공감적소통과발표",
+          "credits": 2,
+          "category": "기초",
+          "area": "발표와토론",
+          "area_original": "발표와토론",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7303",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7304",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7305",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7306",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7307",
+              "section": "05",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7308",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7309",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7310",
+              "section": "08",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64609",
+          "name": "열린사고와실용적말하기",
+          "credits": 2,
+          "category": "기초",
+          "area": "발표와토론",
+          "area_original": "발표와토론",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7311",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7312",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7313",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7314",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7315",
+              "section": "05",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA64610",
+          "name": "협력적사고와토의",
+          "credits": 2,
+          "category": "기초",
+          "area": "발표와토론",
+          "area_original": "발표와토론",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7316",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7317",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7318",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7319",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7320",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7321",
+              "section": "06",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "area": "외국어기초",
+      "courses": [
+        {
+          "course_code": "BKSA51431",
+          "name": "프랑스어기초",
+          "credits": 2,
+          "category": "기초",
+          "area": "외국어기초",
+          "area_original": "외국어기초",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": []
+        },
+        {
+          "course_code": "BKSA51432",
+          "name": "러시아어기초",
+          "credits": 2,
+          "category": "기초",
+          "area": "외국어기초",
+          "area_original": "외국어기초",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7073",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7074",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7075",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7076",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7077",
+              "section": "05",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58149",
+          "name": "일본어기초",
+          "credits": 2,
+          "category": "기초",
+          "area": "외국어기초",
+          "area_original": "외국어기초",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7186",
+              "section": "01",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA53699",
+          "name": "KUGEP1",
+          "credits": 2,
+          "category": "기초",
+          "area": "외국어기초",
+          "area_original": "외국어기초",
+          "source_pdf_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7088",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7089",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7090",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7091",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7092",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7093",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7094",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7095",
+              "section": "08",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7096",
+              "section": "09",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7097",
+              "section": "10",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7098",
+              "section": "11",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7099",
+              "section": "12",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7100",
+              "section": "13",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7101",
+              "section": "14",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7102",
+              "section": "15",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7103",
+              "section": "16",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7104",
+              "section": "17",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7105",
+              "section": "18",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7106",
+              "section": "19",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7107",
+              "section": "20",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7108",
+              "section": "21",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7109",
+              "section": "22",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7110",
+              "section": "23",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA53700",
+          "name": "KUGEP2",
+          "credits": 2,
+          "category": "기초",
+          "area": "외국어기초",
+          "area_original": "외국어기초",
+          "source_pdf_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7111",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7112",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7113",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7114",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7115",
+              "section": "05",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7116",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7117",
+              "section": "07",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58109",
+          "name": "중국어기초",
+          "credits": 2,
+          "category": "기초",
+          "area": "외국어기초",
+          "area_original": "외국어기초",
+          "source_pdf_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7149",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7150",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7151",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7152",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7153",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7154",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7155",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7156",
+              "section": "08",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7157",
+              "section": "09",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7158",
+              "section": "10",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7159",
+              "section": "11",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "area": "인문기초",
+      "courses": [
+        {
+          "course_code": "BKSA58110",
+          "name": "문학의고전",
+          "credits": 2,
+          "category": "기초",
+          "area": "인문기초",
+          "area_original": "인문기초",
+          "source_pdf_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7160",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7161",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7162",
+              "section": "03",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58112",
+          "name": "역사의고전",
+          "credits": 2,
+          "category": "기초",
+          "area": "인문기초",
+          "area_original": "인문기초",
+          "source_pdf_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7163",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7164",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7165",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7166",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7167",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7168",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7169",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7170",
+              "section": "08",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58113",
+          "name": "철학의고전",
+          "credits": 2,
+          "category": "기초",
+          "area": "인문기초",
+          "area_original": "인문기초",
+          "source_pdf_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7171",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7172",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7173",
+              "section": "03",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7174",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7175",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7176",
+              "section": "06",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7177",
+              "section": "07",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7178",
+              "section": "08",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "area": "과학기초",
+      "courses": [
+        {
+          "course_code": "BKSA15891",
+          "name": "대학기초수학",
+          "credits": 2,
+          "category": "기초",
+          "area": "과학기초",
+          "area_original": "과학기초",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7042",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7043",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7044",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7045",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "8260",
+              "section": "05",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58133",
+          "name": "대학기초물리학",
+          "credits": 2,
+          "category": "기초",
+          "area": "과학기초",
+          "area_original": "과학기초",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7181",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7182",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA58224",
+          "name": "대학기초화학",
+          "credits": 2,
+          "category": "기초",
+          "area": "과학기초",
+          "area_original": "과학기초",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7223",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7224",
+              "section": "02",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7225",
+              "section": "03",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7226",
+              "section": "04",
+              "cancelled": true
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA59512",
+          "name": "대학기초생물학",
+          "credits": 2,
+          "category": "기초",
+          "area": "과학기초",
+          "area_original": "과학기초",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7265",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7266",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7267",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7268",
+              "section": "04",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA81308",
+          "name": "기초통계학",
+          "credits": 2,
+          "category": "기초",
+          "area": "과학기초",
+          "area_original": "과학기초",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7423",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7424",
+              "section": "02",
+              "cancelled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "area": "AI/데이터",
+      "courses": [
+        {
+          "course_code": "BKSA56558",
+          "name": "컴퓨팅적사고",
+          "credits": 2,
+          "category": "기초",
+          "area": "AI/데이터",
+          "area_original": "AI/데이터",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7142",
+              "section": "01",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7143",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7144",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7145",
+              "section": "04",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67912",
+          "name": "데이터리터러시",
+          "credits": 2,
+          "category": "기초",
+          "area": "AI/데이터",
+          "area_original": "AI/데이터",
+          "source_pdf_page": 35,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7387",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7388",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7389",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7390",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7391",
+              "section": "05",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7392",
+              "section": "06",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67913",
+          "name": "AI리터러시",
+          "credits": 2,
+          "category": "기초",
+          "area": "AI/데이터",
+          "area_original": "AI/데이터",
+          "source_pdf_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7393",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7394",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7395",
+              "section": "03",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7396",
+              "section": "04",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7397",
+              "section": "05",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67914",
+          "name": "빅데이터의기초",
+          "credits": 2,
+          "category": "기초",
+          "area": "AI/데이터",
+          "area_original": "AI/데이터",
+          "source_pdf_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7398",
+              "section": "01",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7399",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7400",
+              "section": "03",
+              "cancelled": false
+            }
+          ]
+        },
+        {
+          "course_code": "BKSA67915",
+          "name": "프로그래밍의기초",
+          "credits": 2,
+          "category": "기초",
+          "area": "AI/데이터",
+          "area_original": "AI/데이터",
+          "source_pdf_page": 36,
+          "offering_references_2026_2": [
+            {
+              "offering_id": "7401",
+              "section": "01",
+              "cancelled": true
+            },
+            {
+              "offering_id": "7402",
+              "section": "02",
+              "cancelled": false
+            },
+            {
+              "offering_id": "7403",
+              "section": "03",
+              "cancelled": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "other_courses": [
+    {
+      "course_code": "BKSA58232",
+      "name": "글쓰기1",
+      "credits": 3,
+      "category": "기초",
+      "area": null,
+      "area_original": "외국인",
+      "source_pdf_page": 35,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA58233",
+      "name": "글쓰기2",
+      "credits": 3,
+      "category": "기초",
+      "area": null,
+      "area_original": "외국인",
+      "source_pdf_page": 35,
+      "offering_references_2026_2": [
+        {
+          "offering_id": "8257",
+          "section": "01",
+          "cancelled": false
+        },
+        {
+          "offering_id": "8258",
+          "section": "02",
+          "cancelled": false
+        }
+      ]
+    },
+    {
+      "course_code": "BKSA66439",
+      "name": "평생학습자를위한성찰글쓰기",
+      "credits": 3,
+      "category": "기초",
+      "area": null,
+      "area_original": "-",
+      "source_pdf_page": 36,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA66440",
+      "name": "평생학습자를위한KUGEP1",
+      "credits": 3,
+      "category": "기초",
+      "area": null,
+      "area_original": "-",
+      "source_pdf_page": 36,
+      "offering_references_2026_2": []
+    },
+    {
+      "course_code": "BKSA67907",
+      "name": "공감적소통과말하기",
+      "credits": 3,
+      "category": "기초",
+      "area": null,
+      "area_original": "-",
+      "source_pdf_page": 36,
+      "offering_references_2026_2": []
+    }
+  ],
+  "notes": [
+    "영역은 2025 요람 표기 기준. 2026-2 개설 참조는 학수번호로 연결한 것으로 2026년 영역 변경 여부를 검증한 것은 아님.",
+    "외국인 표기 2과목과 영역 - 표기 3과목은 6개 영역에 임의 배정하지 않음.",
+    "평생학습자를위한성찰글쓰기·평생학습자를위한KUGEP1·공감적소통과말하기는 첨단산업융합학과·라이프설계융합학과 신입생에 한하여 수강 가능(PDF 36쪽)."
+  ]
+}
