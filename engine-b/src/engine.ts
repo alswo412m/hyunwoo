@@ -1,3 +1,5 @@
+import { analyzeWalking } from './walking.js';
+import type { WalkingReport } from './walking.js';
 export type Day = "MON" | "TUE" | "WED" | "THU" | "FRI" | "SAT" | "SUN";
 export type TimeSlot = {
   day: Day;
@@ -46,6 +48,7 @@ export type TimetableResponse = {
       classDays: number;
       lastClassTime: string | null;
       travelWarnings: string[];
+      walking: WalkingReport;
       assumedOnlineSectionIds: string[];
       requiredCourseIds: string[];
       omittedCourseIds: string[];
@@ -127,6 +130,7 @@ export function generateTimetables(request: TimetableRequest): TimetableResponse
       if (selected.length === 0 || (minCredits !== null && credits < minCredits)) return;
       const allSlots = selected.flatMap(x => slots(x.section));
       const last = allSlots.reduce<string | null>((latest, slot) => latest === null || slot.endTime > latest ? slot.endTime : latest, null);
+      const walking = analyzeWalking(selected.map(x=>({...x.course,sections:[x.section]})));
       candidates.push({
         candidateId: `candidate_${candidates.length + 1}`,
         totalCredits: credits,
@@ -134,7 +138,8 @@ export function generateTimetables(request: TimetableRequest): TimetableResponse
         summary: {
           classDays: new Set(allSlots.map(x => x.day)).size,
           lastClassTime: last,
-          travelWarnings: [],
+          walking,
+          travelWarnings: [...new Set(walking.days.flatMap(d=>d.transitions.filter(t=>t.insufficientGap||t.seconds===null).map(t=>t.seconds===null ? `${t.fromCourse} → ${t.toCourse}: 이동시간 미확인` : `${t.fromCourse} → ${t.toCourse}: 이동 약 ${(t.seconds!/60).toFixed(1)}분, 수업 사이 ${t.gapMinutes}분`)))],
           assumedOnlineSectionIds: selected.filter(x => online(x.section)).map(x => x.section.sectionId),
           requiredCourseIds: selected.filter(x => x.course.requirement === "required").map(x => x.course.courseId),
           omittedCourseIds: request.courses.filter(c => !selected.some(x => x.course.courseId === c.courseId)).map(c => c.courseId)

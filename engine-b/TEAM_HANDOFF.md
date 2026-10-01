@@ -44,3 +44,7 @@ B 파트 구현: TypeScript 시간표 조합 엔진, C JSON 어댑터, 학과별
 현재 데모는 숫자 우선순위를 입력하지 않고 과목별 mustInclude(반드시 포함)만 받습니다. 기존 API의 priority는 호환 목적으로 유지하지만 화면에서는 전달하지 않습니다. 모든 후보 선택 버튼을 제거하고 후보별 체크박스를 사용합니다. 결과별 미리보기와 선택한 시간표는 월~일 가로축, 08:00~22:00 세로축의 1시간 격자입니다. 30분 시작은 실제 분 단위 위치에 표시하며, 온라인 가정 수업은 별도 목록에 표시합니다. 표시 범위를 벗어나는 시간은 별도 안내로 보존합니다.
 
 이 B 모듈은 저장소의 `engine-b/`에 있습니다. 실행 명령은 먼저 `cd engine-b` 후 실행하세요. 프런트엔드에서 가져올 때 경로를 `engine-b/src/index.ts`로 맞춥니다.
+
+## 도보 이동 기능
+
+A는 `candidate.summary.walking.days`에서 요일·주차별 `totalSeconds`를 읽어 분 단위로 표시하면 됩니다. `transitions`의 consecutive=true 구간은 연강 이동시간을 표시합니다. totalSeconds=null은 미확인 구간이 있는 경우이며 knownSeconds와 unknownTransitions를 함께 표시하세요. summary.travelWarnings는 이동시간 부족 또는 미확인 구간 안내입니다. 연강은 그대로 선택 가능합니다. 독립적으로 `analyzeWalking(resolveCandidate(request,candidate))`를 호출할 수도 있습니다.

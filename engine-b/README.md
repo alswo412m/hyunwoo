@@ -26,7 +26,7 @@ const response = generateTimetables(request as TimetableRequest);
 
 `requirement: required`는 요람상 필수 표시를 위한 정보입니다. 반드시 포함하려면 mustInclude=true를 사용합니다. priority만 지정하고 모든 과목을 반드시 포함하면 결과는 같은 과목을 포함하므로 우선순위가 구성에 영향을 주지 않습니다. 과목 제외를 허용할 때 높은 우선순위 과목을 포함한 결과가 먼저 나옵니다. 유효한 부분 조합도 전부 반환하며 자동으로 제거하지 않습니다.
 
-응답 summary의 추가 필드: assumedOnlineSectionIds(선택된 온라인 가정 후보), requiredCourseIds(선택된 요람 필수 과목), omittedCourseIds(제외된 그룹). sectionId는 courseId와 함께 식별하며 온라인 여부도 해당 후보의 sections와 연결합니다. classDays와 lastClassTime은 온라인 가정 수업을 제외한 주간 일정 요약입니다. 이동 계산은 하지 않아 travelWarnings=[]입니다.
+응답 summary의 추가 필드: assumedOnlineSectionIds(선택된 온라인 가정 후보), requiredCourseIds(선택된 요람 필수 과목), omittedCourseIds(제외된 그룹). sectionId는 courseId와 함께 식별하며 온라인 여부도 해당 후보의 sections와 연결합니다. classDays와 lastClassTime은 온라인 가정 수업을 제외한 주간 일정 요약입니다. 건물 간 도보 이동은 summary.walking과 travelWarnings에 제공합니다.
 
 후보가 없거나 입력 검증 실패 시 candidates=[]와 message를 반환합니다. candidateId는 요청 안에서만 유효합니다. 결과가 많아도 자르지 않으므로 A 파트가 페이지 표시를 하고, 큰 입력은 Web Worker 등으로 호출하는 것이 좋습니다. 조합 수는 분반 수의 곱으로 증가합니다.
 
@@ -64,3 +64,11 @@ Node.js 22.6 이상(권장 24)에서 `npm install`, `npm test`, `npm run typeche
 `npm run demo` 후 [데모 화면](http://127.0.0.1:4173/demo/)을 엽니다. 학과 선택, 검색, 후보 선택, 반드시 포함 여부, 불가 시간, 학점 조건, 전체 조합 페이지, 08:00–22:00 주간 시간표 격자, 결과 선택, 학과별 저장·복원, 가상 이수 편집, 예상 요람 체크까지 연결되어 있습니다. A 파트의 공식 화면에 붙이는 방법과 C 파트 데이터 계약은 [TEAM_HANDOFF.md](TEAM_HANDOFF.md)에 있습니다.
 
 이 B 모듈은 저장소의 `engine-b/`에 있습니다. 실행 명령은 먼저 `cd engine-b` 후 실행하세요. 프런트엔드에서 가져올 때 경로를 `engine-b/src/index.ts`로 맞춥니다.
+
+## 수업 사이 도보 이동
+
+제공된 도보 CSV와 엑셀의 23개 시설/506개 방향별 경로를 대조해 `src/walking-data.ts`에 건물명·거리·초 단위 시간을 저장했습니다. 엑셀의 ‘경로 목록’과 CSV의 모든 값이 일치합니다. 분 단위 반올림 값 대신 초 단위 원본으로 합산합니다.
+
+`analyzeWalking(courses)`는 요일·수업 주차별로 시간순 인접 수업의 건물 이동을 계산합니다. `generateTimetables` 결과의 summary.walking에도 포함합니다. 날짜별 totals는 같은 수업 구성이 있는 주차를 묶어 제공하며 weeks별로 표시합니다. transitions의 consecutive는 앞 수업 종료와 뒤 수업 시작이 같은 연강입니다. gapMinutes는 시간 간격, seconds는 필요한 이동시간, insufficientGap은 간격보다 이동시간이 긴 경우입니다. 연강을 조합에서 제외하지 않고 안내합니다.
+
+하루 합계는 첫~마지막 수업 사이 건물 이동만 포함하며 등하교·공강 중 개인 이동·건물 내부 이동은 제외합니다. 같은 건물의 외부 이동은 0초입니다. 강의실 공란, 표에 없는 건물, 별도 부속동은 미확인으로 남깁니다. 미확인 구간이 있으면 totalSeconds=null이며 knownSeconds와 unknownTransitions를 함께 제공합니다. 온라인 가정 수업 및 명시적 온라인 장소는 이동 대상에서 제외합니다.

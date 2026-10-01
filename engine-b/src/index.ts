@@ -1,2 +1,3 @@
 export * from './engine.js';
 export * from './helpers.js';
+export * from './walking.js';
