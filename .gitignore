@@ -1,0 +1,9 @@
+node_modules/
+.pnpm-store/
+dist/
+data/
+
+/config.json
+/api_key.txt
+.env
+.env.*
